@@ -4,17 +4,10 @@
   const DEADLINE_ISO = "2026-11-20T17:00:00+07:00";
 
   /**
-   * 1) Dán URL Web App Google Apps Script vào đây sau khi Deploy file google-apps-script.gs
-   * Ví dụ: "https://script.google.com/macros/s/AKfycb.../exec"
+   * 1) URL Web App Google Apps Script sau khi Deploy file google-apps-script.gs
    * Khi để trống "", form sẽ chạy chế độ xem trước và tạo phiếu xác nhận trên trình duyệt.
    */
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSE5ZhbKHU2UGREUPQEvOsRrjFeNigbao6IcFaV8hxuBRXjbFo3ETKl_65uNzREv2Z3Q/exec";
-
-  /**
-   * 2) (Cập nhật sau) Dán link Cổng nộp hồ sơ Sơ khảo riêng (Google Form / Link nộp bài) vào đây
-   * khi Ban Tổ chức mở đợt thu bài chính thức. Để trống "" nếu chưa mở link.
-   */
-  const SUBMISSION_PORTAL_URL = "";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwyy7hsO6nbA9hwWiJ8EeqUjC3Z9S_-ufXeI1c_ht6taFP9B0AJF__xsjNCAPiKQd2IXg/exec";
 
   const PILLAR_CONTENT = {
     identity: {
@@ -229,12 +222,10 @@
     }
   }
 
-  ["openPosterBtn", "openPosterImgBtn", "openShowcasePosterBtn"].forEach((id) => {
-    const btn = document.getElementById(id);
-    if (btn) {
-      btn.addEventListener("click", () => openDialog(posterModal));
-    }
-  });
+  const openPosterImgBtn = document.getElementById("openPosterImgBtn");
+  if (openPosterImgBtn) {
+    openPosterImgBtn.addEventListener("click", () => openDialog(posterModal));
+  }
 
   document.querySelectorAll("[data-close-modal]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -256,45 +247,23 @@
     });
   });
 
-  /* ---------------- Registration Form & Validation ---------------- */
+  /* ---------------- Registration & Submission Form ---------------- */
   const form = document.getElementById("registrationForm");
   const entryRadios = Array.from(document.querySelectorAll('input[name="entryType"]'));
   const groupNameField = document.getElementById("groupNameField");
   const memberCountField = document.getElementById("memberCountField");
+  const memberListField = document.getElementById("memberListField");
   const leaderNameLabel = document.getElementById("leaderNameLabel");
   const regGroupName = document.getElementById("regGroupName");
   const submitBtn = document.getElementById("submitBtn");
   const submitBtnLabel = document.getElementById("submitBtnLabel");
   const formGlobalError = document.getElementById("formGlobalError");
-  const submissionPortalBtn = document.getElementById("submissionPortalBtn");
-  const submissionPortalDesc = document.getElementById("submissionPortalDesc");
-  const receiptPortalBtn = document.getElementById("receiptPortalBtn");
-
-  // Nếu đã cấu hình link Cổng nộp hồ sơ Sơ khảo riêng, tự động kích hoạt nút mở link
-  if (SUBMISSION_PORTAL_URL.trim()) {
-    const portalHref = SUBMISSION_PORTAL_URL.trim();
-    if (submissionPortalBtn) {
-      submissionPortalBtn.href = portalHref;
-      submissionPortalBtn.target = "_blank";
-      submissionPortalBtn.rel = "noopener noreferrer";
-      submissionPortalBtn.removeAttribute("data-scroll");
-      submissionPortalBtn.textContent = "Mở cổng nộp hồ sơ ↗";
-    }
-    if (submissionPortalDesc) {
-      submissionPortalDesc.innerHTML =
-        'Đã hoàn thiện Bản thuyết minh (≤ 05 trang A4) &amp; Phối cảnh? Gửi hồ sơ Sơ khảo qua cổng tiếp nhận chính thức trước <strong>17h00 · 20/11/2026</strong>.';
-    }
-    if (receiptPortalBtn) {
-      receiptPortalBtn.href = portalHref;
-      receiptPortalBtn.hidden = false;
-    }
-  }
 
   function syncEntryTypeUI() {
     const selected = document.querySelector('input[name="entryType"]:checked');
     const isGroup = !selected || selected.value === "group";
 
-    [groupNameField, memberCountField].forEach((el) => {
+    [groupNameField, memberCountField, memberListField].forEach((el) => {
       if (el) el.classList.toggle("hidden-field", !isGroup);
     });
     if (regGroupName) {
@@ -322,6 +291,30 @@
     if (err) err.textContent = msg || "";
   }
 
+  function validateHttpUrl(value) {
+    try {
+      const parsed = new URL(value);
+      return parsed.protocol === "http:" || parsed.protocol === "https:";
+    } catch {
+      return false;
+    }
+  }
+
+  function validateAgeAtLeast15(dobStr) {
+    if (!dobStr) return false;
+    const parts = dobStr.split("-").map(Number);
+    if (parts.length !== 3 || parts.some(Number.isNaN)) return false;
+    const [year, month, day] = parts;
+    const cutoffYear = 2026;
+    const cutoffMonth = 11;
+    const cutoffDay = 20;
+    let age = cutoffYear - year;
+    if (cutoffMonth < month || (cutoffMonth === month && cutoffDay < day)) {
+      age -= 1;
+    }
+    return age >= 15;
+  }
+
   let lastReceiptText = "";
 
   function setSubmitting(loading) {
@@ -330,8 +323,8 @@
     submitBtn.classList.toggle("is-loading", loading);
     if (submitBtnLabel) {
       submitBtnLabel.textContent = loading
-        ? "ĐANG ĐỒNG BỘ ĐĂNG KÝ..."
-        : "XÁC NHẬN ĐĂNG KÝ THAM GIA";
+        ? "ĐANG GỬI HỒ SƠ DỰ THI..."
+        : "NỘP HỒ SƠ DỰ THI";
     }
   }
 
@@ -353,13 +346,22 @@
       const groupName = document.getElementById("regGroupName").value.trim();
       const memberCount = document.getElementById("regMemberCount").value;
       const leaderName = document.getElementById("regLeaderName").value.trim();
+      const dob = document.getElementById("regDob").value.trim();
       const phone = document.getElementById("regPhone").value.trim();
       const email = document.getElementById("regEmail").value.trim();
       const unit = document.getElementById("regUnit").value.trim();
+      const members = document.getElementById("regMembers").value.trim();
+
+      const projectName = document.getElementById("regProjectName").value.trim();
+      const entryIndex = document.getElementById("regEntryIndex").value;
+      const dimensions = document.getElementById("regDimensions").value;
+      const folderUrl = document.getElementById("regFolderUrl").value.trim();
+      const videoUrl = document.getElementById("regVideoUrl").value.trim();
+      const aiUsage = document.getElementById("regAiUsage").value.trim();
       const consent = document.getElementById("regConsent").checked;
 
       if (isGroup && groupName.length < 2) {
-        setError("regGroupName", "errGroupName", "Vui lòng nhập tên nhóm dự kiến.");
+        setError("regGroupName", "errGroupName", "Vui lòng nhập tên nhóm dự thi.");
         valid = false;
       } else {
         setError("regGroupName", "errGroupName", "");
@@ -370,6 +372,16 @@
         valid = false;
       } else {
         setError("regLeaderName", "errLeaderName", "");
+      }
+
+      if (!dob) {
+        setError("regDob", "errDob", "Vui lòng chọn ngày sinh để đối chiếu điều kiện dự thi.");
+        valid = false;
+      } else if (!validateAgeAtLeast15(dob)) {
+        setError("regDob", "errDob", "Thí sinh phải từ đủ 15 tuổi trở lên tính đến hạn nhận bài 20/11/2026.");
+        valid = false;
+      } else {
+        setError("regDob", "errDob", "");
       }
 
       if (!/^0\d{9,10}$/.test(phone)) {
@@ -393,9 +405,30 @@
         setError("regUnit", "errUnit", "");
       }
 
+      if (projectName.length < 3) {
+        setError("regProjectName", "errProjectName", "Vui lòng nhập tên mô hình hoặc phương án dự thi.");
+        valid = false;
+      } else {
+        setError("regProjectName", "errProjectName", "");
+      }
+
+      if (!validateHttpUrl(folderUrl)) {
+        setError("regFolderUrl", "errFolderUrl", "Vui lòng dán đường dẫn http:// hoặc https:// hợp lệ (mở quyền xem cho BTC).");
+        valid = false;
+      } else {
+        setError("regFolderUrl", "errFolderUrl", "");
+      }
+
+      if (videoUrl && !validateHttpUrl(videoUrl)) {
+        setError("regVideoUrl", "errVideoUrl", "Link video không hợp lệ (cần bắt đầu bằng http:// hoặc https://).");
+        valid = false;
+      } else {
+        setError("regVideoUrl", "errVideoUrl", "");
+      }
+
       const errConsent = document.getElementById("errConsent");
       if (!consent) {
-        if (errConsent) errConsent.textContent = "Vui lòng xác nhận điều kiện tham gia và tuân thủ Thể lệ.";
+        if (errConsent) errConsent.textContent = "Vui lòng xác nhận cam kết bản quyền, tiêu chuẩn kỹ thuật và Thể lệ.";
         valid = false;
       } else if (errConsent) {
         errConsent.textContent = "";
@@ -419,9 +452,17 @@
             groupName: isGroup ? groupName : "",
             memberCount: isGroup ? memberCount : "1",
             leaderName,
+            dob,
             phone,
             email,
             unit,
+            members: isGroup ? members : "",
+            projectName,
+            entryIndex,
+            dimensions,
+            folderUrl,
+            videoUrl,
+            aiUsage,
             consent
           };
 
@@ -456,13 +497,17 @@
 
       const entryLabel = isGroup ? `Nhóm (${memberCount} thành viên) — ${groupName}` : "Thí sinh cá nhân";
       const rows = [
-        ["Mã đăng ký", code],
+        ["Mã hồ sơ", code],
+        ["Tên phương án", `${projectName} (${entryIndex})`],
+        ["Quy mô mô hình", dimensions],
         ["Hình thức", entryLabel],
-        [isGroup ? "Trưởng nhóm" : "Thí sinh", leaderName],
+        [isGroup ? "Trưởng nhóm" : "Thí sinh", `${leaderName} (${dob})`],
         ["Liên hệ", `${phone} · ${email}`],
         ["Đơn vị", unit],
-        ["Bước tiếp theo", "Nộp hồ sơ Sơ khảo trước 17h00 · 20/11/2026"]
+        ["Link hồ sơ", folderUrl]
       ];
+      if (videoUrl) rows.push(["Link video", videoUrl]);
+      if (aiUsage) rows.push(["Công cụ AI", aiUsage]);
 
       const rcCode = document.getElementById("rcCode");
       const receiptDetails = document.getElementById("receiptDetails");
@@ -470,7 +515,7 @@
       if (rcCode) rcCode.textContent = code;
       if (receiptFeedback) {
         receiptFeedback.textContent = syncedToSheet
-          ? "Đăng ký đã được ghi trực tiếp vào Google Sheet của Ban Tổ chức!"
+          ? "Hồ sơ dự thi đã được ghi trực tiếp vào Google Sheet của Ban Tổ chức!"
           : "Chế độ xem trước (chưa cấu hình GOOGLE_SCRIPT_URL): Phiếu tạo tạm trên trình duyệt.";
       }
 
@@ -489,10 +534,10 @@
       }
 
       lastReceiptText =
-        `PHIẾU XÁC NHẬN ĐĂNG KÝ — TỰ HÀO HẢI PHÒNG 2026\n` +
-        `==================================================\n` +
+        `PHIẾU ĐĂNG KÝ & XÁC NHẬN NỘP HỒ SƠ — TỰ HÀO HẢI PHÒNG 2026\n` +
+        `============================================================\n` +
         rows.map(([k, v]) => `${k}: ${v}`).join("\n") +
-        `\nThời điểm tạo phiếu: ${new Date().toLocaleString("vi-VN")}\n`;
+        `\nThời điểm nộp hồ sơ: ${new Date().toLocaleString("vi-VN")}\n`;
 
       try {
         localStorage.setItem("tu_hao_hp_2026_last_registration", JSON.stringify({ code, rows }));

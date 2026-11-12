@@ -1,197 +1,175 @@
 /**
- * Google Apps Script — Cổng ĐĂNG KÝ THAM GIA Cuộc thi Thiết kế Mô hình "Tự hào Hải Phòng" năm 2026
- *
- * HƯỚNG DẪN TẠO SHEET & LIÊN KẾT NHANH:
- * 1. Mở https://sheets.new để tạo 1 Google Sheet mới.
- * 2. Vào menu: Tiện ích mở rộng (Extensions) -> Apps Script.
- * 3. Xóa code mẫu, dán toàn bộ file này vào và nhấn Lưu (Ctrl+S).
- * 4. Chọn hàm `setupSheet` trên thanh công cụ -> nhấn Chạy (Run) & cấp quyền để TỰ ĐỘNG tạo 10 cột tiêu đề chuẩn.
- * 5. Nhấn Triển khai (Deploy) -> Tùy chọn triển khai mới (New deployment):
- *    - Loại (Type): Ứng dụng web (Web app)
- *    - Thực thi với tư cách (Execute as): Tôi (Me)
- *    - Ai có quyền truy cập (Who has access): Bất kỳ ai (Anyone)
- * 6. Copy URL Web App (dạng https://script.google.com/macros/s/.../exec) dán vào biến `GOOGLE_SCRIPT_URL` trong `script.js`.
+ * GOOGLE APPS SCRIPT — TIẾP NHẬN HỒ SƠ DỰ THI VÒNG SƠ KHẢO
+ * Cuộc thi Thiết kế Mô hình "Tự hào Hải Phòng" năm 2026
+ * ------------------------------------------------------------------
+ * Cách cài đặt / cập nhật Web App:
+ * 1) Mở Google Sheet của Ban Tổ chức -> Tiện ích mở rộng -> Apps Script.
+ * 2) Dán toàn bộ nội dung file này vào Code.gs -> Lưu (Ctrl+S).
+ * 3) (Tùy chọn) Chạy thử hàm setupSheet() để tạo tab "HoSoDuThi_2026" & tiêu đề cột.
+ * 4) Chọn Triển khai -> Quản lý các bản triển khai -> biểu tượng bút chì ->
+ *    Phiên bản: "Phiên bản mới" -> Triển khai (giữ nguyên URL Web App hiện tại).
  */
 
-const SHEET_NAME = "DangKy_2026";
-const SEND_CONFIRMATION_EMAIL = false; // Đổi thành true nếu muốn tự động gửi email xác nhận cho thí sinh
+const SHEET_NAME = "HoSoDuThi_2026";
 
 const HEADERS = [
-  "Thời gian đăng ký (GMT+7)",
-  "Mã đăng ký",
-  "Hình thức dự thi",
+  "Thời gian nộp",
+  "Mã hồ sơ",
+  "Hình thức",
   "Tên nhóm",
-  "Số thành viên dự kiến",
-  "Họ tên (Trưởng nhóm / Thí sinh)",
-  "Số điện thoại / Zalo",
+  "Số thành viên",
+  "Trưởng nhóm / Thí sinh",
+  "Ngày sinh",
+  "Số điện thoại",
   "Email",
-  "Đơn vị / Trường học / Địa phương",
-  "Xác nhận điều kiện & Thể lệ"
-];
-
-const COLUMN_WIDTHS = [
-  180, // Thời gian đăng ký
-  115, // Mã đăng ký
-  145, // Hình thức
-  200, // Tên nhóm
-  125, // Số thành viên
-  210, // Họ tên
-  140, // SĐT / Zalo
-  225, // Email
-  270, // Đơn vị
-  170  // Xác nhận
+  "Đơn vị / Trường học",
+  "Thành viên cùng nhóm",
+  "Tên phương án",
+  "Thứ tự phương án",
+  "Quy mô diện tích",
+  "Link thư mục hồ sơ",
+  "Link video thuyết minh",
+  "Khai báo công cụ AI",
+  "Cam kết Thể lệ"
 ];
 
 /**
- * Chạy hàm này 1 lần để tự động tạo tab `DangKy_2026` và định dạng 10 cột tiêu đề.
- * Hàm doPost cũng sẽ tự gọi nếu sheet chưa được khởi tạo.
- */
-function setupSheet() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  let sheet = ss.getSheetByName(SHEET_NAME);
-
-  if (!sheet) {
-    const firstSheet = ss.getSheets()[0];
-    if (firstSheet && firstSheet.getLastRow() === 0 && firstSheet.getLastColumn() === 0) {
-      firstSheet.setName(SHEET_NAME);
-      sheet = firstSheet;
-    } else {
-      sheet = ss.insertSheet(SHEET_NAME);
-    }
-  }
-
-  if (sheet.getLastRow() === 0) {
-    const headerRange = sheet.getRange(1, 1, 1, HEADERS.length);
-    headerRange.setValues([HEADERS]);
-    headerRange
-      .setBackground("#093795")
-      .setFontColor("#FFFFFF")
-      .setFontWeight("bold")
-      .setVerticalAlignment("middle")
-      .setHorizontalAlignment("center")
-      .setWrap(true);
-
-    sheet.setRowHeight(1, 38);
-    sheet.setFrozenRows(1);
-
-    COLUMN_WIDTHS.forEach((width, index) => {
-      sheet.setColumnWidth(index + 1, width);
-    });
-  }
-
-  return sheet;
-}
-
-/**
- * Ngăn Excel/Sheets hiểu nhầm ký tự đầu (=, +, -, @) thành công thức
+ * Ngăn chặn lỗi/tấn công Google Sheets formula injection nếu người dùng nhập =, +, -, @ ở đầu ô.
  */
 function sanitizeCell(value) {
-  const str = value == null ? "" : String(value).trim();
-  if (/^[=+\-@]/.test(str)) {
+  const str = String(value || "").trim();
+  if (!str) return "";
+  if (/^[=+\-@\t\r]/.test(str)) {
     return "'" + str;
   }
   return str;
 }
 
 /**
- * Kiểm tra nhanh API khi mở URL Web App trên trình duyệt
+ * Tạo hoặc chuẩn hóa sheet tiếp nhận hồ sơ với 18 cột chính thức.
  */
-function doGet() {
-  return ContentService.createTextOutput(
-    JSON.stringify({
-      ok: true,
-      service: "Tu Hao Hai Phong 2026 — Registration Sheet API",
-      sheet: SHEET_NAME
-    })
-  ).setMimeType(ContentService.MimeType.JSON);
+function setupSheet() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName(SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(SHEET_NAME);
+  }
+
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(HEADERS);
+    const headerRange = sheet.getRange(1, 1, 1, HEADERS.length);
+    headerRange
+      .setFontWeight("bold")
+      .setBackground("#093795")
+      .setFontColor("#ffffff")
+      .setVerticalAlignment("middle")
+      .setWrap(true);
+    sheet.setFrozenRows(1);
+    sheet.setRowHeight(1, 38);
+
+    const widths = [165, 115, 115, 180, 110, 185, 110, 125, 200, 220, 230, 220, 125, 185, 280, 240, 210, 120];
+    widths.forEach((w, idx) => sheet.setColumnWidth(idx + 1, w));
+  }
+  return sheet;
+}
+
+function jsonResponse(obj) {
+  return ContentService
+    .createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 /**
- * Nhận dữ liệu POST từ Form đăng ký trên Landing Page và ghi 1 dòng mới vào Google Sheet
+ * Kiểm tra trạng thái hoạt động của endpoint Web App.
+ */
+function doGet() {
+  const sheet = setupSheet();
+  const totalSubmissions = Math.max(0, sheet.getLastRow() - 1);
+  return jsonResponse({
+    ok: true,
+    service: "TuHaoHaiPhong2026-SubmissionAPI",
+    sheet: SHEET_NAME,
+    totalSubmissions
+  });
+}
+
+/**
+ * Tiếp nhận dữ liệu nộp hồ sơ Sơ khảo trực tiếp từ landing page.
  */
 function doPost(e) {
   const lock = LockService.getScriptLock();
-  lock.waitLock(15000);
-
   try {
-    let payload = {};
-    if (e && e.postData && e.postData.contents) {
-      try {
-        payload = JSON.parse(e.postData.contents);
-      } catch (err) {
-        payload = e.parameter || {};
-      }
-    } else if (e && e.parameter) {
-      payload = e.parameter;
-    }
+    lock.waitLock(15000);
 
-    if (!payload.leaderName || !payload.phone || !payload.email || !payload.unit) {
-      return jsonResponse({
-        ok: false,
-        error: "Thiếu thông tin đăng ký bắt buộc (Họ tên, SĐT, Email, Đơn vị)."
-      });
+    const raw = (e && e.postData && e.postData.contents) ? e.postData.contents : "{}";
+    const data = JSON.parse(raw);
+
+    const entryType = data.entryType === "individual" ? "Cá nhân" : "Nhóm";
+    const groupName = entryType === "Nhóm" ? String(data.groupName || "").trim() : "";
+    const memberCount = entryType === "Nhóm" ? String(data.memberCount || "2").trim() : "1";
+    const leaderName = String(data.leaderName || "").trim();
+    const dob = String(data.dob || "").trim();
+    const phone = String(data.phone || "").trim();
+    const email = String(data.email || "").trim();
+    const unit = String(data.unit || "").trim();
+    const members = entryType === "Nhóm" ? String(data.members || "").trim() : "";
+
+    const projectName = String(data.projectName || "").trim();
+    const entryIndex = String(data.entryIndex || "Phương án 01").trim();
+    const dimensions = String(data.dimensions || "").trim();
+    const folderUrl = String(data.folderUrl || "").trim();
+    const videoUrl = String(data.videoUrl || "").trim();
+    const aiUsage = String(data.aiUsage || "").trim();
+    const consent = data.consent ? "Đã cam kết" : "Chưa xác nhận";
+
+    if (!leaderName || !dob || !phone || !email || !unit || !projectName || !folderUrl) {
+      return jsonResponse({ ok: false, error: "Thiếu thông tin bắt buộc trong hồ sơ dự thi." });
+    }
+    if (!/^https?:\/\//i.test(folderUrl)) {
+      return jsonResponse({ ok: false, error: "Link thư mục hồ sơ phải bắt đầu bằng http:// hoặc https://." });
+    }
+    if (videoUrl && !/^https?:\/\//i.test(videoUrl)) {
+      return jsonResponse({ ok: false, error: "Link video thuyết minh phải bắt đầu bằng http:// hoặc https://." });
     }
 
     const sheet = setupSheet();
-    const now = new Date();
-    const submittedAt = Utilities.formatDate(now, "Asia/Ho_Chi_Minh", "dd/MM/yyyy HH:mm:ss");
-    const code = payload.code || ("HP26-" + Math.floor(1000 + Math.random() * 9000));
-    const isGroup = payload.entryType !== "individual";
+    const nowText = Utilities.formatDate(new Date(), "Asia/Ho_Chi_Minh", "dd/MM/yyyy HH:mm:ss");
+    const code = String(data.code || ("HP26-" + Math.floor(1000 + Math.random() * 9000))).trim();
 
-    const row = [
-      submittedAt,
+    sheet.appendRow([
+      nowText,
       sanitizeCell(code),
-      isGroup ? "Nhóm tác giả" : "Thí sinh cá nhân",
-      isGroup ? sanitizeCell(payload.groupName) : "—",
-      isGroup ? sanitizeCell(payload.memberCount || "2") : "1",
-      sanitizeCell(payload.leaderName),
-      sanitizeCell(payload.phone),
-      sanitizeCell(payload.email),
-      sanitizeCell(payload.unit),
-      payload.consent ? "Đã xác nhận (≥ 15 tuổi & Thể lệ)" : "Chưa xác nhận"
-    ];
-
-    sheet.appendRow(row);
-    const lastRow = sheet.getLastRow();
-    sheet.getRange(lastRow, 1, 1, HEADERS.length).setVerticalAlignment("top").setWrap(true);
-
-    if (SEND_CONFIRMATION_EMAIL && payload.email) {
-      try {
-        MailApp.sendEmail({
-          to: String(payload.email).trim(),
-          subject: `[Tự hào Hải Phòng 2026] Xác nhận đăng ký tham gia (${code})`,
-          body:
-            `Xin chào ${payload.leaderName},\n\n` +
-            `Ban Tổ chức đã ghi nhận thông tin đăng ký tham gia Cuộc thi thiết kế mô hình "Tự hào Hải Phòng" năm 2026.\n` +
-            `- Mã đăng ký: ${code}\n` +
-            `- Hình thức: ${isGroup ? "Nhóm (" + payload.groupName + ")" : "Cá nhân"}\n` +
-            `- Đơn vị: ${payload.unit}\n` +
-            `- Thời gian đăng ký: ${submittedAt} (GMT+7)\n\n` +
-            `Vui lòng hoàn thiện và nộp hồ sơ Sơ khảo qua cổng nộp bài của Ban Tổ chức trước 17h00 ngày 20/11/2026.\n\n` +
-            `Trân trọng,\nBan Tổ chức Cuộc thi Thiết kế Mô hình "Tự hào Hải Phòng" 2026.`
-        });
-      } catch (mailErr) {
-        // Bỏ qua nếu vượt hạn mức gửi mail miễn phí trong ngày
-      }
-    }
+      entryType,
+      sanitizeCell(groupName),
+      sanitizeCell(memberCount),
+      sanitizeCell(leaderName),
+      sanitizeCell(dob),
+      sanitizeCell(phone),
+      sanitizeCell(email),
+      sanitizeCell(unit),
+      sanitizeCell(members),
+      sanitizeCell(projectName),
+      sanitizeCell(entryIndex),
+      sanitizeCell(dimensions),
+      sanitizeCell(folderUrl),
+      sanitizeCell(videoUrl),
+      sanitizeCell(aiUsage),
+      consent
+    ]);
 
     return jsonResponse({
       ok: true,
-      code: code,
-      submittedAt: submittedAt
+      code,
+      sheet: SHEET_NAME,
+      row: sheet.getLastRow(),
+      timestamp: nowText
     });
   } catch (err) {
     return jsonResponse({
       ok: false,
-      error: "Không thể ghi dữ liệu vào Google Sheet: " + err.message
+      error: err && err.message ? err.message : "Lỗi xử lý dữ liệu phía máy chủ."
     });
   } finally {
     lock.releaseLock();
   }
-}
-
-function jsonResponse(obj) {
-  return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(
-    ContentService.MimeType.JSON
-  );
 }

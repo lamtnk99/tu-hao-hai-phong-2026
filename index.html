@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cuộc thi Thiết kế Mô hình “Tự hào Hải Phòng” năm 2026 | Sáng tạo không gian – Lan tỏa bản sắc</title>
   <meta name="description" content="Cuộc thi thiết kế mô hình Tự hào Hải Phòng năm 2026 do Thành đoàn Hải Phòng phối hợp với Trường Cao đẳng FPT Polytechnic cơ sở Hải Phòng tổ chức. Hạn nhận hồ sơ: 17h00 ngày 20/11/2026." />
-  <link rel="icon" type="image/png" href="./assets/logo-doan.png" />
+  <link rel="icon" type="image/png" href="./assets/logo-cuoc-thi.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -22,36 +22,26 @@
   <header class="header" id="siteHeader">
     <div class="container nav-wrap">
       <a class="brand" href="#top" data-scroll="top" aria-label="Trang chủ Cuộc thi Tự hào Hải Phòng 2026">
-        <span class="brand-mark" aria-hidden="true">
-          <img src="./assets/logo-doan.png" alt="" />
-        </span>
+        <img src="./assets/logo-cuoc-thi.png" alt="Logo Cuộc thi Tự hào Hải Phòng 2026" class="brand-contest-logo" />
         <span class="brand-text">
           <span class="brand-title">TỰ HÀO <em>HẢI PHÒNG</em> 2026</span>
-          <span class="brand-sub">THÀNH ĐOÀN HP <b>×</b> FPT POLYTECHNIC</span>
+          <span class="brand-sub">SÁNG TẠO KHÔNG GIAN – LAN TỎA BẢN SẮC</span>
         </span>
       </a>
 
       <nav class="nav-links" id="navMenu" aria-label="Điều hướng chính">
         <a href="#top" data-scroll="top" class="active">Trang chủ</a>
-        <a href="#gioi-thieu" data-scroll="gioi-thieu">Giới thiệu</a>
-        <a href="#hanh-trinh" data-scroll="hanh-trinh">Lộ trình</a>
+        <a href="#yeu-cau" data-scroll="yeu-cau">Yêu cầu</a>
+        <a href="#noi-dung" data-scroll="noi-dung">Nội dung</a>
         <a href="#the-le" data-scroll="the-le">Thể lệ</a>
         <a href="#giai-thuong" data-scroll="giai-thuong">Giải thưởng</a>
+        <a href="#lich-trinh" data-scroll="lich-trinh">Lịch trình</a>
         <a href="#don-vi" data-scroll="don-vi">Đơn vị</a>
       </nav>
 
       <div class="nav-action">
-        <a href="#the-le" data-scroll="the-le" class="btn btn-outline btn-small">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-          </svg>
-          <span>Thể lệ</span>
-        </a>
         <button type="button" class="btn btn-crimson btn-small" data-scroll="dang-ky">
-          <span>Đăng ký dự thi</span>
+          <span>Nộp hồ sơ</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -68,7 +58,7 @@
   </header>
 
   <main class="page-wrapper">
-    <!-- ================= HERO SECTION ================= -->
+    <!-- ================= HERO SECTION (GIỚI THIỆU & MỤC ĐÍCH CUỘC THI) ================= -->
     <section class="hero" id="top" aria-labelledby="hero-heading">
       <div class="hero-sky-glow" aria-hidden="true"></div>
       <div class="hero-grid-bg" aria-hidden="true"></div>
@@ -82,21 +72,17 @@
       </svg>
 
       <div class="container hero-container">
-        <!-- Dải nhận diện hai đơn vị tổ chức -->
-        <div class="hero-organizers">
-          <div class="org-pill">
-            <img src="./assets/logo-doan.png" alt="Logo Đoàn TNCS Hồ Chí Minh" class="org-pill-logo org-pill-logo--doan" />
-            <span>THÀNH ĐOÀN HẢI PHÒNG</span>
-          </div>
+        <!-- Dải logo ba đơn vị đồng tổ chức -->
+        <div class="hero-organizers hero-organizers--logos" aria-label="Đơn vị phối hợp tổ chức">
+          <img src="./assets/logo-doan.png" alt="Logo Đoàn TNCS Hồ Chí Minh" class="hero-org-logo hero-org-logo--doan" />
           <span class="org-divider" aria-hidden="true"></span>
-          <div class="org-pill org-pill--fpt">
-            <img src="./assets/logo-fpoly.jpg" alt="Logo FPT Polytechnic" class="org-pill-logo org-pill-logo--fpt" />
-            <span>CAO ĐẲNG FPT POLYTECHNIC HẢI PHÒNG</span>
-          </div>
+          <img src="./assets/logo-fpoly.jpg" alt="Logo FPT Polytechnic" class="hero-org-logo hero-org-logo--fpt" />
+          <span class="org-divider" aria-hidden="true"></span>
+          <img src="./assets/logo-hoi-sinh-vien.webp" alt="Logo Hội Sinh viên Việt Nam" class="hero-org-logo hero-org-logo--hsv" />
         </div>
 
         <div class="hero-split">
-          <!-- Cột nội dung chính -->
+          <!-- Cột nội dung giới thiệu & mục đích cuộc thi -->
           <div class="hero-copy">
             <div class="hero-ribbon">
               <span class="ribbon-dot" aria-hidden="true"></span>
@@ -112,27 +98,12 @@
             <p class="hero-slogan">“Sáng tạo không gian – Lan tỏa bản sắc”</p>
 
             <p class="hero-desc">
-              Sân chơi sáng tạo thiết kế không gian giáo dục trực quan, trưng bày, trải nghiệm và check-in dành cho sinh viên các trường Đại học, Cao đẳng và đoàn viên thanh niên, Nhân dân từ 15 tuổi trở lên trên địa bàn thành phố Hải Phòng.
+              Sân chơi sáng tạo dành cho sinh viên các trường Đại học, Cao đẳng cùng đoàn viên thanh niên, Nhân dân từ 15 tuổi trở lên tại Hải Phòng — thiết kế không gian giáo dục trực quan, trưng bày và check-in để lựa chọn mẫu mô hình <strong>“Tự hào Hải Phòng”</strong> nhân rộng tại trường học, không gian sinh hoạt Đoàn – Hội – Đội.
             </p>
-
-            <div class="hero-specs" role="list" aria-label="Thông số nổi bật">
-              <div class="spec-chip" role="listitem">
-                <strong>5m² – 10m²</strong>
-                <span>Quy mô mô hình</span>
-              </div>
-              <div class="spec-chip" role="listitem">
-                <strong>Cá nhân / Nhóm ≤ 5</strong>
-                <span>Tối đa 02 phương án</span>
-              </div>
-              <div class="spec-chip spec-chip--gold" role="listitem">
-                <strong>17h00 · 20/11/2026</strong>
-                <span>Hạn nhận bài Sơ khảo</span>
-              </div>
-            </div>
 
             <div class="hero-actions">
               <button type="button" class="btn btn-crimson" data-scroll="dang-ky">
-                <span>ĐĂNG KÝ &amp; NỘP HỒ SƠ</span>
+                <span>NỘP HỒ SƠ DỰ THI</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -147,32 +118,12 @@
             </div>
           </div>
 
-          <!-- Cột Showcase Key Visual (Poster chính thức) -->
+          <!-- Cột ảnh Key Visual sạch (không đè chữ / nhãn) -->
           <div class="hero-visual">
-            <div class="poster-frame">
-              <div class="poster-frame-bar">
-                <span class="frame-badge">KEY VISUAL CHÍNH THỨC</span>
-                <button type="button" class="frame-zoom-btn" id="openPosterBtn" aria-label="Phóng to poster cuộc thi">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                  <span>Phóng to</span>
-                </button>
-              </div>
-              <button type="button" class="poster-img-trigger" id="openPosterImgBtn" aria-label="Xem poster cuộc thi Tự hào Hải Phòng 2026 kích thước đầy đủ">
-                <img src="./assets/poster-tu-hao-hai-phong.jpg" alt="Poster chính thức Cuộc thi Thiết kế Mô hình Tự hào Hải Phòng 2026 - Sáng tạo không gian - Lan tỏa bản sắc" width="1024" height="682" />
+            <div class="poster-frame poster-frame--clean">
+              <button type="button" class="poster-img-trigger" id="openPosterImgBtn" aria-label="Xem ảnh poster cuộc thi Tự hào Hải Phòng 2026 kích thước đầy đủ">
+                <img src="./assets/poster-tu-hao-hai-phong.jpg" alt="Poster chính thức Cuộc thi Thiết kế Mô hình Tự hào Hải Phòng 2026" width="1024" height="682" />
               </button>
-              <div class="poster-float poster-float--blue">
-                <span class="pf-kicker">MÔ HÌNH TRIỂN KHAI</span>
-                <strong>Cao ≤ 2,8m · Tỷ lệ 1:10–1:20</strong>
-              </div>
-              <div class="poster-float poster-float--red">
-                <span class="pf-kicker">TINH THẦN CUỘC THI</span>
-                <strong>Một nhận diện chung – Nhiều cách kể</strong>
-              </div>
             </div>
           </div>
         </div>
@@ -181,157 +132,109 @@
       <!-- Đường sóng chân trời đỏ-xanh đặc trưng từ poster -->
       <div class="hero-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 72" preserveAspectRatio="none">
-          <path d="M0,36 C360,72 720,0 1080,44 C1260,64 1380,48 1440,34 L1440,72 L0,72 Z" fill="#093795" fill-opacity="0.12"></path>
-          <path d="M0,48 C320,10 680,76 1120,28 C1280,10 1380,32 1440,46 L1440,72 L0,72 Z" fill="#BD0417" fill-opacity="0.14"></path>
+          <path d="M0,36 C360,72 720,0 1080,44 C1260,64 1380,48 1440,34 L1440,72 L0,72 Z" fill="#093795" fill-opacity="0.1" />
+          <path d="M0,48 C320,10 680,76 1120,28 C1280,10 1380,32 1440,46 L1440,72 L0,72 Z" fill="#BD0417" fill-opacity="0.12" />
         </svg>
       </div>
-
-      <!-- Thanh trạng thái dưới Hero (Clone cấu trúc .hero-caption của site mẫu) -->
-      <div class="hero-caption">
-        <span>
-          <span class="signal" aria-hidden="true"></span>
-          CỔNG TIẾP NHẬN HỒ SƠ SƠ KHẢO ĐANG MỞ · HẠN NỘP: 17H00 NGÀY 20/11/2026
-        </span>
-        <a href="#dem-nguoc" data-scroll="dem-nguoc">
-          THEO DÕI ĐẾM NGƯỢC <b>↓</b>
-        </a>
-      </div>
     </section>
 
-    <!-- ================= COUNTDOWN SECTION ================= -->
-    <section class="countdown-section" id="dem-nguoc" aria-labelledby="countdown-title">
-      <div class="container count-layout">
-        <div class="reveal">
-          <p class="section-kicker">SUBMISSION DEADLINE // VÒNG SƠ KHẢO</p>
-          <h2 id="countdown-title" class="title">
-            Mỗi ý tưởng bắt đầu<br />
-            <span class="gradient">từ một bản thiết kế.</span>
-          </h2>
-          <p class="lead count-description">
-            Đừng bỏ lỡ cơ hội hiện thực hóa mô hình “Tự hào Hải Phòng” của bạn tại các trường học và không gian sinh hoạt Đoàn – Hội – Đội trên toàn thành phố.
-          </p>
+    <!-- ================= COUNTDOWN SECTION (CĂN GIỮA ĐỘC LẬP) ================= -->
+    <section class="countdown-section countdown-section--solo" id="dem-nguoc" aria-labelledby="countdown-heading">
+      <div class="container">
+        <div class="countdown-solo reveal">
+          <h2 id="countdown-heading" class="countdown-solo-title">HẠN NỘP BÀI VÒNG SƠ KHẢO</h2>
 
-          <div class="date-line">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            <span>HẠN NHẬN HỒ SƠ: 17H00 · 20.11.2026</span>
-          </div>
+          <div class="timer-wrap timer-wrap--solo">
+            <div class="timer-top">
+              <span id="countdownStatus">ĐẾM NGƯỢC THỜI GIAN CÒN LẠI</span>
+              <span>GMT+7 · HẢI PHÒNG</span>
+            </div>
 
-          <div class="count-actions">
-            <button type="button" class="btn btn-crimson" data-scroll="dang-ky">
-              <span>NỘP HỒ SƠ DỰ THI</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
-            <a href="#hanh-trinh" data-scroll="hanh-trinh" class="btn btn-royal-outline">
-              <span>XEM LỘ TRÌNH 3 GIAI ĐOẠN</span>
+            <div class="count-boxes" role="timer" aria-live="polite" aria-label="Thời gian còn lại đến hạn nộp bài Vòng Sơ khảo">
+              <div class="count-cell count-cell--blue">
+                <span class="count-number" id="cdDays">--</span>
+                <span class="count-label">NGÀY</span>
+              </div>
+              <div class="count-cell count-cell--blue">
+                <span class="count-number" id="cdHours">--</span>
+                <span class="count-label">GIỜ</span>
+              </div>
+              <div class="count-cell count-cell--red">
+                <span class="count-number" id="cdMins">--</span>
+                <span class="count-label">PHÚT</span>
+              </div>
+              <div class="count-cell count-cell--red">
+                <span class="count-number" id="cdSecs">--</span>
+                <span class="count-label">GIÂY</span>
+              </div>
+            </div>
+
+            <p class="timer-deadline">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
-            </a>
+              <span>Hạn nhận hồ sơ: <strong>17h00 ngày 20/11/2026</strong></span>
+            </p>
           </div>
-        </div>
-
-        <div class="timer-wrap reveal">
-          <div class="timer-top">
-            <span id="countdownStatus">COUNTDOWN // HỒ SƠ SƠ KHẢO</span>
-            <span>GMT+7 · HẢI PHÒNG</span>
-          </div>
-          <div class="count-boxes" role="timer" aria-live="polite" aria-label="Thời gian còn lại đến hạn nộp bài Vòng Sơ khảo">
-            <div class="count-cell count-cell--blue">
-              <span class="count-number" id="cdDays">--</span>
-              <span class="count-label">NGÀY</span>
-            </div>
-            <div class="count-cell count-cell--blue">
-              <span class="count-number" id="cdHours">--</span>
-              <span class="count-label">GIỜ</span>
-            </div>
-            <div class="count-cell count-cell--red">
-              <span class="count-number" id="cdMins">--</span>
-              <span class="count-label">PHÚT</span>
-            </div>
-            <div class="count-cell count-cell--red">
-              <span class="count-number" id="cdSecs">--</span>
-              <span class="count-label">GIÂY</span>
-            </div>
-          </div>
-          <p class="timer-hint">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-            <span>
-              Đếm ngược tới <strong>17:00 ngày 20/11/2026</strong> theo giờ Việt Nam. Vòng Sơ khảo chấm hồ sơ dự kiến tuần 4 tháng 11/2026; Vòng Chung kết dự kiến tháng 12/2026.
-            </span>
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- ================= STATS RIBBON ================= -->
-    <section class="stats" aria-label="Số liệu trọng tâm cuộc thi">
-      <div class="container stats-inner">
-        <div class="stat stat--blue reveal">
-          <span class="stat-num">5–10<span class="plus">m²</span></span>
-          <span class="stat-desc">QUY MÔ KHÔNG GIAN MÔ HÌNH · CHIỀU CAO TỐI ĐA 2,8M</span>
-        </div>
-        <div class="stat stat--blue reveal">
-          <span class="stat-num">10</span>
-          <span class="stat-desc">TÁC PHẨM XUẤT SẮC ĐƯỢC CHỌN VÀO VÒNG CHUNG KẾT</span>
-        </div>
-        <div class="stat stat--red reveal">
-          <span class="stat-num">05</span>
-          <span class="stat-desc">THÀNH VIÊN TỐI ĐA/NHÓM · GỬI TỐI ĐA 02 PHƯƠNG ÁN</span>
-        </div>
-        <div class="stat stat--red reveal">
-          <span class="stat-num">100<span class="plus">đ</span></span>
-          <span class="stat-desc">THANG ĐIỂM ĐÁNH GIÁ TOÀN DIỆN QUA 5 NHÓM TIÊU CHÍ</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= ABOUT SECTION ================= -->
-    <section class="intro" id="gioi-thieu" aria-labelledby="intro-title">
+    <!-- ================= REQUIREMENTS SECTION (YÊU CẦU & MÔ HÌNH DEMO) ================= -->
+    <section class="intro" id="yeu-cau" aria-labelledby="req-title">
       <div class="container intro-layout">
         <div class="reveal">
-          <p class="section-kicker">ABOUT THE CONTEST // MỤC ĐÍCH &amp; BẢN SẮC</p>
-          <h2 id="intro-title" class="title">
-            Một nhận diện chung.<br />
-            <span class="gradient">Nhiều cách kể về Hải Phòng.</span>
+          <p class="section-kicker">QUY CHUẨN KHÔNG GIAN</p>
+          <h2 id="req-title" class="title req-title">
+            Yêu cầu <span class="gradient">thiết kế mô hình.</span>
           </h2>
-          <p class="lead intro-description">
-            Cuộc thi thiết kế mô hình <strong>“Tự hào Hải Phòng” năm 2026</strong> tìm kiếm các phương án không gian giáo dục trực quan, trưng bày, trải nghiệm và check-in giàu tính thẩm mỹ, ứng dụng công nghệ số và khả năng nhân rộng tại trường học, không gian sinh hoạt Đoàn – Hội – Đội toàn thành phố.
-          </p>
 
-          <div class="bullets">
-            <span class="chip chip--blue">✦ Sinh viên ĐH, CĐ &amp; ĐVTN ≥ 15 tuổi</span>
-            <span class="chip chip--red">✦ Văn hóa Xứ Đông – Thành phố Cảng</span>
-            <span class="chip chip--blue">✦ Truyền thống “Trung dũng – Quyết thắng”</span>
-            <span class="chip chip--red">✦ Kết cấu module – Vật liệu xanh</span>
-          </div>
+          <ul class="req-list">
+            <li>
+              <span class="req-bullet" aria-hidden="true">1</span>
+              <div>
+                <strong>Quy mô không gian 5m² – 10m² · Cao tối đa 2,8m</strong>
+                <span>Chủ động lựa chọn hình dạng mặt bằng mở, thuận tiện di chuyển, tham quan và check-in tại trường học hoặc khuôn viên Đoàn – Hội – Đội.</span>
+              </div>
+            </li>
+            <li>
+              <span class="req-bullet" aria-hidden="true">2</span>
+              <div>
+                <strong>Sa bàn minh họa tỷ lệ 1:10 – 1:20 (nếu thực hiện)</strong>
+                <span>Thống nhất tỷ lệ giữa các hạng mục và thông số trong bản vẽ; ghi rõ vật liệu dự kiến và thiết bị công nghệ hỗ trợ.</span>
+              </div>
+            </li>
+            <li>
+              <span class="req-bullet" aria-hidden="true">3</span>
+              <div>
+                <strong>Kết cấu module gọn nhẹ · Vật liệu xanh &amp; tương tác số</strong>
+                <span>Ưu tiên vật liệu thân thiện môi trường, tái sử dụng, dễ tháo lắp – nhân rộng; khuyến khích tích hợp mã QR, video hoặc thuyết minh số.</span>
+              </div>
+            </li>
+            <li>
+              <span class="req-bullet" aria-hidden="true">4</span>
+              <div>
+                <strong>Cá nhân hoặc Nhóm ≤ 05 thành viên · Tối đa 02 phương án</strong>
+                <span>10 tác phẩm xuất sắc nhất Vòng Sơ khảo được chọn vào Vòng Chung kết (chấm theo thang 100 điểm qua 05 nhóm tiêu chí).</span>
+              </div>
+            </li>
+          </ul>
         </div>
 
-        <!-- Visual Showcase Tương tác: Không gian Thiết kế 5 Thành phần -->
+        <!-- Visual Showcase Tương tác: Mô hình Demo 5 Thành phần -->
         <figure class="intro-visual reveal">
           <div class="visual-top">
             <span class="visual-badge">
               <span class="dot-gold" aria-hidden="true"></span>
-              MÔ HÌNH KHÔNG GIAN · 5M² – 10M²
+              MÔ HÌNH DEMO · 5M² – 10M²
             </span>
             <span class="visual-scale">TỶ LỆ SA BÀN 1:10 – 1:20</span>
           </div>
 
           <div class="blueprint-stage">
-            <!-- SVG Sơ đồ không gian mô hình cách điệu theo poster -->
             <svg class="blueprint-svg" viewBox="0 0 420 230" fill="none" aria-labelledby="bp-svg-title">
-              <title id="bp-svg-title">Minh họa cấu trúc không gian mô hình Tự hào Hải Phòng với vòm cổng, khu trưng bày và điểm tương tác</title>
+              <title id="bp-svg-title">Mô hình demo minh họa cấu trúc không gian Tự hào Hải Phòng gồm vòm nhận diện, bảng trưng bày, check-in và mã QR</title>
               <defs>
                 <linearGradient id="archRed" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0%" stop-color="#DF1E33" />
@@ -346,35 +249,28 @@
                   <stop offset="100%" stop-color="#F26F21" />
                 </linearGradient>
               </defs>
-              <!-- Nền lưới isometric -->
               <ellipse cx="210" cy="182" rx="168" ry="34" fill="#EAF3FF" stroke="#093795" stroke-opacity="0.22" stroke-width="1.5" />
               <ellipse cx="210" cy="182" rx="134" ry="24" fill="#FFFFFF" stroke="#BD0417" stroke-opacity="0.25" stroke-dasharray="4 4" />
-              <!-- Vòm cổng chính -->
               <path d="M126 174 V92 C126 44 294 44 294 92 V174" stroke="url(#archRed)" stroke-width="14" stroke-linecap="round" />
               <path d="M142 174 V98 C142 58 278 58 278 98 V174" stroke="url(#goldWarm)" stroke-width="3" stroke-dasharray="6 4" />
-              <!-- Màn hình / bảng trưng bày trái (Di sản) -->
               <rect x="74" y="102" width="66" height="66" rx="8" fill="url(#archBlue)" stroke="#FFFFFF" stroke-width="2" />
               <path d="M86 150 L102 128 L116 142 L128 122 L134 150 Z" fill="#7DC2FC" fill-opacity="0.6" />
-              <!-- Màn hình / bảng trưng bày phải (Cảng biển & Cầu) -->
               <rect x="280" y="102" width="66" height="66" rx="8" fill="url(#archRed)" stroke="#FFFFFF" stroke-width="2" />
               <path d="M290 152 H336 M302 152 V120 L324 146 M324 152 V116 L336 146" stroke="#FBEDD0" stroke-width="2" stroke-linecap="round" />
-              <!-- Bục nhận diện trung tâm -->
               <polygon points="154,176 266,176 254,145 166,145" fill="url(#archRed)" />
               <text x="210" y="164" text-anchor="middle" fill="#FFFFFF" font-size="8.5" font-weight="800" font-family="Be Vietnam Pro, sans-serif">TỰ HÀO HẢI PHÒNG</text>
-              <!-- Điểm QR tương tác -->
               <rect x="198" y="114" width="24" height="24" rx="4" fill="#093795" stroke="#7DC2FC" stroke-width="1.5" />
               <rect x="203" y="119" width="5" height="5" fill="#FFFFFF" />
               <rect x="212" y="119" width="5" height="5" fill="#FFFFFF" />
               <rect x="203" y="128" width="5" height="5" fill="#FFFFFF" />
               <rect x="212" y="128" width="5" height="5" fill="#F5BE57" />
-              <!-- Nhãn kích thước -->
               <line x1="42" y1="186" x2="378" y2="186" stroke="#093795" stroke-opacity="0.3" stroke-dasharray="3 3" />
               <text x="210" y="206" text-anchor="middle" fill="#093795" font-size="10" font-weight="700" font-family="JetBrains Mono, monospace">MẶT BẰNG MỞ: 5m² — 10m² · CAO ≤ 2,8m</text>
             </svg>
           </div>
 
           <!-- 5 Tabs thành phần không gian tương tác -->
-          <div class="pillar-tabs" role="tablist" aria-label="Các thành phần cấu thành mô hình">
+          <div class="pillar-tabs" role="tablist" aria-label="Các thành phần cấu thành mô hình demo">
             <button type="button" class="pillar-tab active" role="tab" aria-selected="true" data-pillar="identity">01. Nhận diện</button>
             <button type="button" class="pillar-tab" role="tab" aria-selected="false" data-pillar="display">02. Trưng bày</button>
             <button type="button" class="pillar-tab" role="tab" aria-selected="false" data-pillar="checkin">03. Check-in</button>
@@ -385,298 +281,240 @@
           <div class="pillar-detail" id="pillarDetail">
             <strong>Điểm nhận diện “Tự hào Hải Phòng”:</strong> Thể hiện tên, chủ đề, infographic, biểu tượng hoa phượng, cầu cảng hoặc yếu tố đặc trưng của thành phố để tạo dấu ấn tổng thể.
           </div>
-
-          <figcaption class="visual-caption">
-            <span>Khuyến khích cân bằng giữa <strong>thẩm mỹ, giáo dục &amp; khả năng thi công thực tế.</strong></span>
-            <a href="#hanh-trinh" data-scroll="hanh-trinh">Xem lộ trình ↗</a>
-          </figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- ================= JOURNEY / TIMELINE SECTION ================= -->
-    <section class="journey journey--timeline" id="hanh-trinh" aria-labelledby="journey-title">
+    <!-- ================= CONTEST BRIEF SECTION (NỘI DUNG CUỘC THI / ĐỀ BÀI) ================= -->
+    <section class="brief-section" id="noi-dung" aria-labelledby="brief-title">
       <div class="container">
-        <div class="journey-header reveal">
-          <p class="section-kicker">CONTEST ROADMAP // LỘ TRÌNH CUỘC THI</p>
-          <h2 id="journey-title" class="title">
-            3 giai đoạn. <span class="gradient">Từ ý tưởng đến mô hình thực tế.</span>
+        <div class="brief-header reveal">
+          <p class="section-kicker">ĐỀ BÀI &amp; CHẤT LIỆU</p>
+          <h2 id="brief-title" class="title">
+            Nội dung <span class="gradient">cuộc thi.</span>
           </h2>
           <p class="lead">
-            Hành trình từ khi tiếp nhận hồ sơ trực tuyến, huấn luyện cùng chuyên gia thiết kế FPT Polytechnic đến trưng bày và bảo vệ tại Vòng Chung kết.
+            Thiết kế phương án mô hình hoặc góc không gian <strong>“Tự hào Hải Phòng”</strong>, lựa chọn và kết hợp một hoặc nhiều chất liệu tiêu biểu dưới đây:
           </p>
-          <div class="journey-period">
-            <span></span>
-            THỜI GIAN TỔ CHỨC DỰ KIẾN: <b>THÁNG 11 — 12.2026</b>
-          </div>
         </div>
 
-        <ol class="roadmap">
-          <!-- Stage 1 -->
-          <li class="roadmap-stop roadmap-stop--blue reveal">
-            <span class="roadmap-node" aria-hidden="true">01</span>
-            <details class="roadmap-card" open>
-              <summary>
-                <span class="roadmap-date">
-                  TỪ KHI PHÁT ĐỘNG — <time datetime="2026-11-20">17H00 · 20.11.2026</time>
-                </span>
-                <span class="roadmap-round">GIAI ĐOẠN 01 <span>/</span> VÒNG SƠ KHẢO</span>
-                <h3>Phát động &amp; Nộp hồ sơ</h3>
-                <span class="roadmap-format">Nộp hồ sơ trực tuyến · Cá nhân hoặc Nhóm tối đa 05 thành viên</span>
-                <span class="roadmap-toggle">
-                  <span class="when-closed">Xem chi tiết hồ sơ</span>
-                  <span class="when-open">Thu gọn chi tiết</span>
-                  <svg class="roadmap-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg>
-                </span>
-              </summary>
-              <div class="roadmap-content">
-                <p>Thí sinh nộp hồ sơ dự thi trực tuyến theo biểu mẫu của Ban Tổ chức (tối đa 02 phương án thiết kế cho mỗi cá nhân/nhóm):</p>
-                <ul>
-                  <li>Phiếu đăng ký dự thi theo mẫu của Ban Tổ chức.</li>
-                  <li>Bản thuyết minh phương án thiết kế (tối đa <strong>05 trang A4</strong>): nêu rõ tên tác phẩm, ý tưởng chủ đạo, thông điệp, bố cục, vật liệu dự kiến, giải pháp tương tác &amp; khả năng thi công thực tế.</li>
-                  <li>Bản thiết kế/hình ảnh minh họa: gồm mặt bằng tổng thể/sơ đồ bố cục và tối thiểu <strong>02 hình ảnh</strong> (vẽ tay, ảnh ghép, mô phỏng 2D/3D hoặc phối cảnh).</li>
-                  <li>Khuyến khích (không bắt buộc) gửi kèm video giới thiệu tối đa <strong>03 phút</strong>.</li>
-                </ul>
-                <a href="#dang-ky" data-scroll="dang-ky" class="roadmap-link">Đăng ký nộp hồ sơ ↗</a>
-              </div>
-            </details>
-            <div class="roadmap-caption" aria-hidden="true">
-              <span>01 / KHỞI ĐẦU</span>
-              <p>Chắt lọc chất liệu Xứ Đông – Thành phố Cảng.<br />Định hình không gian sáng tạo.</p>
-            </div>
-          </li>
+        <div class="brief-grid">
+          <article class="brief-card brief-card--red reveal">
+            <span class="brief-num">01</span>
+            <h3>Lịch sử &amp; Truyền thống cách mạng</h3>
+            <p>
+              Làm nổi bật lịch sử hình thành và phát triển thành phố; truyền thống <strong>“Trung dũng – Quyết thắng”</strong>; hệ thống di tích, địa chỉ đỏ, danh nhân và những nhân vật tiêu biểu của Hải Phòng.
+            </p>
+          </article>
 
-          <!-- Stage 2 -->
-          <li class="roadmap-stop roadmap-stop--gold reveal">
-            <span class="roadmap-node" aria-hidden="true">02</span>
-            <details class="roadmap-card">
-              <summary>
-                <span class="roadmap-date">
-                  TUẦN 4 · 11.2026 <small>&amp; 07 NGÀY HOÀN THIỆN</small>
-                </span>
-                <span class="roadmap-round">GIAI ĐOẠN 02 <span>/</span> SƠ KHẢO &amp; COACHING</span>
-                <h3>Chọn Top 10 &amp; Workshop</h3>
-                <span class="roadmap-format">Chấm chọn 10 tác phẩm xuất sắc · Chuyên gia FPT Polytechnic huấn luyện</span>
-                <span class="roadmap-toggle">
-                  <span class="when-closed">Xem chi tiết giai đoạn</span>
-                  <span class="when-open">Thu gọn chi tiết</span>
-                  <svg class="roadmap-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg>
-                </span>
-              </summary>
-              <div class="roadmap-content">
-                <p>Ban Giám khảo chấm điểm hồ sơ Sơ khảo và lựa chọn <strong>10 tác phẩm</strong> có tổng điểm cao nhất bước vào Vòng Chung kết.</p>
-                <ul>
-                  <li><strong>07 ngày hoàn thiện:</strong> Kể từ khi công bố Top 10, các tác giả/nhóm hoàn thiện phương án theo góp ý chuyên môn của Ban Giám khảo.</li>
-                  <li>Giảng viên, chuyên gia thiết kế – mỹ thuật – truyền thông – công nghệ của <strong>FPT Polytechnic Hải Phòng</strong> trực tiếp làm huấn luyện viên (Coach) cho các đội thi qua các buổi Workshop.</li>
-                  <li>Chuẩn bị mô hình thu nhỏ/sa bàn/module (tỷ lệ khuyến nghị <strong>1:10 đến 1:20</strong>) kèm 01 bảng giới thiệu khổ <strong>A1 hoặc A2</strong> (hoặc file trình chiếu).</li>
-                </ul>
-                <a href="#the-le" data-scroll="the-le" class="roadmap-link">Xem tiêu chí chấm điểm ↗</a>
-              </div>
-            </details>
-            <div class="roadmap-caption" aria-hidden="true">
-              <span>02 / HOÀN THIỆN</span>
-              <p>Đồng hành cùng chuyên gia thiết kế.<br />Chuyển hóa bản vẽ thành sa bàn 1:10–1:20.</p>
-            </div>
-          </li>
+          <article class="brief-card brief-card--blue reveal">
+            <span class="brief-num">02</span>
+            <h3>Văn hóa Xứ Đông – Thành phố Cảng</h3>
+            <p>
+              Khai thác chất liệu di sản, danh lam thắng cảnh, lễ hội, làng nghề, ẩm thực đặc sắc và sự giao thoa văn hóa giữa vùng đất <strong>Xứ Đông</strong> và <strong>Thành phố Cảng anh hùng</strong>.
+            </p>
+          </article>
 
-          <!-- Stage 3 -->
-          <li class="roadmap-stop roadmap-stop--crimson reveal">
-            <span class="roadmap-node" aria-hidden="true">03</span>
-            <details class="roadmap-card">
-              <summary>
-                <span class="roadmap-date">
-                  DỰ KIẾN THÁNG <time datetime="2026-12">12.2026</time>
-                </span>
-                <span class="roadmap-round">GIAI ĐOẠN 03 <span>/</span> CHUNG KẾT &amp; TRAO GIẢI</span>
-                <h3>Triển lãm &amp; Bảo vệ phương án</h3>
-                <span class="roadmap-format">Hội trường Ủy ban MTTQ Việt Nam TP. Hải Phòng · Top 10 Chung kết</span>
-                <span class="roadmap-toggle">
-                  <span class="when-closed">Xem chi tiết Chung kết</span>
-                  <span class="when-open">Thu gọn chi tiết</span>
-                  <svg class="roadmap-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg>
-                </span>
-              </summary>
-              <div class="roadmap-content">
-                <p>10 tác phẩm Chung kết được bố trí khu vực trưng bày chuyên nghiệp để đại biểu, giảng viên và sinh viên tham quan trải nghiệm.</p>
-                <ul>
-                  <li>Mỗi tác giả/nhóm có tối đa <strong>07 phút thuyết trình</strong> ý tưởng &amp; giải pháp thi công và tối đa <strong>05 phút trả lời câu hỏi</strong> phản biện từ Ban Giám khảo.</li>
-                  <li>Lễ trao giải vinh danh 01 Giải Nhất, 02 Giải Nhì, 03 Giải Ba, 04 Giải Khuyến khích cùng kinh phí hiện thực hóa mô hình Giải Nhất.</li>
-                </ul>
-                <a href="#giai-thuong" data-scroll="giai-thuong" class="roadmap-link">Xem cơ cấu giải thưởng ↗</a>
-              </div>
-            </details>
-            <div class="roadmap-caption" aria-hidden="true">
-              <span>03 / TỎA SÁNG</span>
-              <p>Trưng bày trước hội đồng chuyên môn.<br />Lan tỏa mô hình tiêu biểu toàn thành phố.</p>
-            </div>
-          </li>
-        </ol>
+          <article class="brief-card brief-card--gold reveal">
+            <span class="brief-num">03</span>
+            <h3>Thành tựu &amp; Tuổi trẻ Hải Phòng</h3>
+            <p>
+              Khắc họa thành tựu phát triển kinh tế – xã hội, hình ảnh tuổi trẻ Hải Phòng năng động và những câu chuyện đẹp theo dòng chảy <strong>Hải Phòng trong lịch sử – hôm nay – tương lai</strong>.
+            </p>
+          </article>
 
-        <p class="journey-note">* Các mốc thời gian cụ thể về chấm Sơ khảo, Workshop và Chung kết được Ban Tổ chức cập nhật qua Thành đoàn Hải Phòng &amp; FPT Polytechnic Hải Phòng.</p>
+          <article class="brief-card brief-card--royal reveal">
+            <span class="brief-num">04</span>
+            <h3>Hình thức thể hiện không gian</h3>
+            <p>
+              Tích hợp sáng tạo điểm nhận diện <strong>“Tự hào Hải Phòng”</strong>, khu vực tranh, ảnh, bản đồ, infographic, mô hình, hiện vật, sản phẩm mỹ thuật cùng mã QR hoặc các trải nghiệm tương tác số.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ================= RULES & SCORING SECTION ================= -->
+    <!-- ================= RULES & SCORING SECTION (THỂ LỆ CUỘC THI) ================= -->
     <section class="rules" id="the-le" aria-labelledby="rules-title">
-      <div class="container rules-layout">
-        <div class="reveal">
-          <p class="section-kicker section-kicker--light">RULES &amp; SCORING // THỂ LỆ &amp; TIÊU CHÍ</p>
+      <div class="container">
+        <div class="rules-header reveal">
+          <p class="section-kicker section-kicker--light">QUY ĐỊNH CHÍNH THỨC</p>
           <h2 id="rules-title" class="title title--light">
-            Thể lệ <span class="gradient-gold">rõ ràng.</span><br />
-            Đánh giá minh bạch.
+            Thể lệ <span class="gradient-gold">cuộc thi</span>
           </h2>
-          <p class="lead lead--light rules-description">
-            Cuộc thi đề cao tính bản sắc, thẩm mỹ sáng tạo, khả năng ứng dụng linh hoạt và tinh thần nguyên gốc trong từng phương án thiết kế mô hình.
-          </p>
+        </div>
 
-          <button type="button" class="btn btn-crimson" data-scroll="dang-ky">
-            <span>ĐĂNG KÝ THAM GIA NGAY</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </button>
-
-          <div class="rule-glow">
-            <span class="rule-symbol" aria-hidden="true">✓</span>
-            <div>
-              <strong>Thông số không gian tiêu chuẩn</strong>
-              <p>Diện tích 5m² – 10m² · Cao tối đa 2,8m · Tỷ lệ mô hình 1:10 đến 1:20 · Không gian mở dễ tháo lắp.</p>
-            </div>
+        <!-- Mục 1: Thể lệ chung (4 khung cân đối 2x2 để người dùng click xem chi tiết) -->
+        <div class="rules-subblock reveal">
+          <div class="rules-subhead">
+            <span class="sub-badge">MỤC 01</span>
+            <h3>Thể lệ chung</h3>
           </div>
 
-          <!-- Bảng thang điểm 100 -->
-          <div class="scoring-card" aria-label="Thang điểm chấm thi 100 điểm">
-            <div class="scoring-head">
-              <span>THANG ĐIỂM CHẤM THI</span>
-              <strong>TỔNG 100 ĐIỂM</strong>
-            </div>
-            <ul class="scoring-list">
+          <div class="rules-grid-2x2">
+            <details class="rule-box" open>
+              <summary>
+                <span class="qnum">01</span>
+                <span class="qtitle">Đối tượng tham gia</span>
+                <span class="chev" aria-hidden="true">+</span>
+              </summary>
+              <div class="answer">
+                <ul>
+                  <li>Sinh viên đang học tập tại các trường đại học, cao đẳng trên địa bàn TP. Hải Phòng.</li>
+                  <li>Đoàn viên thanh niên và Nhân dân từ <strong>15 tuổi trở lên</strong> trên địa bàn thành phố.</li>
+                  <li>Tham gia theo tư cách <strong>cá nhân hoặc nhóm tối đa 05 thành viên</strong>; mỗi cá nhân chỉ tham gia tối đa 01 nhóm; mỗi cá nhân/nhóm gửi tối đa <strong>02 phương án thiết kế</strong>.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="rule-box" open>
+              <summary>
+                <span class="qnum">02</span>
+                <span class="qtitle">Yêu cầu về kỹ thuật</span>
+                <span class="chev" aria-hidden="true">+</span>
+              </summary>
+              <div class="answer">
+                <ul>
+                  <li>Tổng diện tích thiết kế thực tế từ <strong>5m² đến 10m²</strong>; chiều cao các hạng mục chính không quá <strong>2,8m</strong>; không gian mở thuận tiện tiếp cận, tham quan và check-in.</li>
+                  <li>Nếu làm mô hình/sa bàn thu nhỏ, chọn tỷ lệ <strong>1:10 đến 1:20</strong> thống nhất với kích thước bản vẽ.</li>
+                  <li>Thể hiện rõ mặt bằng, kích thước tổng thể, vật liệu đề xuất, thiết bị công nghệ (nếu có) và giải pháp thi công an toàn, gọn nhẹ, dễ tháo lắp.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="rule-box">
+              <summary>
+                <span class="qnum">03</span>
+                <span class="qtitle">Hồ sơ Vòng Sơ khảo</span>
+                <span class="chev" aria-hidden="true">+</span>
+              </summary>
+              <div class="answer">
+                <ul>
+                  <li>Phiếu đăng ký dự thi theo mẫu của Ban Tổ chức.</li>
+                  <li>Bản thuyết minh phương án thiết kế tối đa <strong>05 trang A4</strong> (nêu rõ tên tác phẩm, ý tưởng chủ đạo, thông điệp, bố cục, vật liệu, tương tác công nghệ và khả năng thi công thực tế).</li>
+                  <li>Bản thiết kế/hình ảnh minh họa: sơ đồ bố cục hoặc mặt bằng tổng thể và tối thiểu <strong>02 hình ảnh</strong> (vẽ tay, ảnh ghép, mô phỏng 2D/3D hoặc phối cảnh).</li>
+                  <li>Khuyến khích (không bắt buộc) gửi kèm video giới thiệu thời lượng tối đa <strong>03 phút</strong>.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="rule-box">
+              <summary>
+                <span class="qnum">04</span>
+                <span class="qtitle">Quy định sử dụng phần mềm &amp; Bản quyền</span>
+                <span class="chev" aria-hidden="true">+</span>
+              </summary>
+              <div class="answer">
+                <ul>
+                  <li>Tác phẩm phải do cá nhân/nhóm trực tiếp xây dựng, chưa từng đạt giải tại các cuộc thi khác, không sao chép hay vi phạm quyền sở hữu trí tuệ.</li>
+                  <li><strong>Được phép</strong> sử dụng phần mềm thiết kế và công cụ AI hỗ trợ sáng tạo, nhưng thí sinh chịu hoàn toàn trách nhiệm về tính nguyên gốc, nguồn tư liệu, hình ảnh.</li>
+                  <li>Trường hợp dùng công cụ AI tạo sinh, khuyến khích <strong>ghi rõ công cụ và phạm vi sử dụng</strong> trong bản thuyết minh; BTC có quyền loại tác phẩm nếu phát hiện gian lận.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Mục 2: Các vòng thi (Chính xác 02 vòng: Vòng Sơ khảo & Vòng Chung kết) -->
+        <div class="rules-subblock reveal">
+          <div class="rules-subhead">
+            <span class="sub-badge">MỤC 02</span>
+            <h3>Các vòng thi</h3>
+          </div>
+
+          <div class="rounds-grid">
+            <article class="round-card round-card--blue">
+              <div class="round-top">
+                <span class="round-tag">VÒNG 01</span>
+                <span class="round-time">Hạn nộp: 17h00 · 20/11/2026</span>
+              </div>
+              <h4>Vòng Sơ khảo</h4>
+              <ul>
+                <li>Thí sinh đăng ký tham gia và nộp hồ sơ trực tuyến theo đường dẫn do Ban Tổ chức công bố (tối đa 02 phương án/đội).</li>
+                <li>Ban Tổ chức kiểm tra tính hợp lệ của hồ sơ; Ban Giám khảo chấm điểm các phương án theo thang 100 điểm.</li>
+                <li>Lựa chọn <strong>10 tác phẩm có tổng điểm cao nhất</strong> bước tiếp vào Vòng Chung kết và công bố trên các kênh thông tin chính thức.</li>
+              </ul>
+            </article>
+
+            <article class="round-card round-card--crimson">
+              <div class="round-top">
+                <span class="round-tag">VÒNG 02</span>
+                <span class="round-time">Dự kiến Tháng 12/2026</span>
+              </div>
+              <h4>Vòng Chung kết &amp; Lễ trao giải</h4>
+              <ul>
+                <li><strong>07 ngày hoàn thiện &amp; Workshop:</strong> Top 10 được giảng viên, chuyên gia Trường CĐ FPT Polytechnic Hải Phòng trực tiếp hướng dẫn hoàn thiện phương án, làm sa bàn/module (1:10–1:20) và bảng giới thiệu khổ A1/A2 (hoặc slide).</li>
+                <li><strong>Trưng bày &amp; Bảo vệ:</strong> 10 tác phẩm được trưng bày tại <strong>Hội trường Ủy ban MTTQ Việt Nam TP. Hải Phòng</strong>.</li>
+                <li>Mỗi tác giả/nhóm có tối đa <strong>07 phút thuyết trình</strong> và <strong>05 phút trả lời phản biện</strong> từ Ban Giám khảo để chọn ra các giải thưởng xuất sắc.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <!-- Mục 3: Tiêu chí chấm điểm (Thang 100 điểm) -->
+        <div class="rules-subblock reveal">
+          <div class="rules-subhead">
+            <span class="sub-badge">MỤC 03</span>
+            <h3>Tiêu chí chấm điểm (Tổng 100 điểm)</h3>
+          </div>
+
+          <div class="scoring-card scoring-card--wide" aria-label="Thang điểm chấm thi 100 điểm">
+            <ul class="scoring-grid">
               <li>
                 <div class="score-row">
-                  <span>1. Nội dung, thông điệp &amp; bản sắc Hải Phòng</span>
-                  <b>30đ</b>
+                  <span>1. Nội dung, thông điệp &amp; khả năng thể hiện bản sắc Hải Phòng</span>
+                  <b>30 điểm</b>
                 </div>
                 <div class="score-bar"><span style="width: 30%"></span></div>
               </li>
               <li>
                 <div class="score-row">
                   <span>2. Tính sáng tạo, độc đáo và thẩm mỹ</span>
-                  <b>25đ</b>
+                  <b>25 điểm</b>
                 </div>
                 <div class="score-bar"><span style="width: 25%"></span></div>
               </li>
               <li>
                 <div class="score-row">
-                  <span>3. Tính khả thi, ứng dụng &amp; linh hoạt triển khai</span>
-                  <b>20đ</b>
+                  <span>3. Tính khả thi, khả năng ứng dụng và linh hoạt khi triển khai</span>
+                  <b>20 điểm</b>
                 </div>
                 <div class="score-bar"><span style="width: 20%"></span></div>
               </li>
               <li>
                 <div class="score-row">
-                  <span>4. Hiệu quả giáo dục, tiếp cận &amp; tương tác</span>
-                  <b>15đ</b>
+                  <span>4. Hiệu quả giáo dục, khả năng tiếp cận và tương tác</span>
+                  <b>15 điểm</b>
                 </div>
                 <div class="score-bar"><span style="width: 15%"></span></div>
               </li>
               <li>
                 <div class="score-row">
-                  <span>5. Kỹ năng trình bày, thuyết minh phương án</span>
-                  <b>10đ</b>
+                  <span>5. Kỹ năng trình bày, thuyết minh và làm rõ phương án</span>
+                  <b>10 điểm</b>
                 </div>
                 <div class="score-bar"><span style="width: 10%"></span></div>
               </li>
             </ul>
+            <p class="scoring-footnote">
+              * Vòng Sơ khảo chấm tiêu chí số 5 qua mức độ rõ ràng, logic của hồ sơ; video giới thiệu không bắt buộc.
+            </p>
           </div>
-        </div>
-
-        <div class="faq reveal">
-          <details open>
-            <summary>
-              <span class="qnum">01</span>
-              <span class="qtitle">Đối tượng nào được tham gia và quy định nhóm dự thi ra sao?</span>
-              <span class="chev" aria-hidden="true">+</span>
-            </summary>
-            <div class="answer">
-              <p>
-                Cuộc thi dành cho <strong>sinh viên các trường đại học, cao đẳng</strong> và <strong>đoàn viên thanh niên, Nhân dân từ 15 tuổi trở lên</strong> trên địa bàn TP. Hải Phòng. Thí sinh dự thi theo hình thức <strong>cá nhân hoặc nhóm tối đa 05 thành viên</strong>. Mỗi cá nhân chỉ tham gia tối đa 01 nhóm và mỗi cá nhân/nhóm được gửi tối đa <strong>02 phương án thiết kế</strong>.
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="qnum">02</span>
-              <span class="qtitle">Yêu cầu kỹ thuật về quy mô, kích thước và chất liệu nội dung?</span>
-              <span class="chev" aria-hidden="true">+</span>
-            </summary>
-            <div class="answer">
-              <p>
-                Tổng diện tích thiết kế thực tế từ <strong>5m² đến 10m²</strong>, chiều cao hạng mục chính không quá <strong>2,8m</strong>, thiết kế mở thuận tiện cho tham quan và check-in. Nếu làm mô hình/sa bàn thu nhỏ, sử dụng tỷ lệ <strong>1:10 đến 1:20</strong> thống nhất với bản vẽ. Nội dung khai thác lịch sử, truyền thống “Trung dũng – Quyết thắng”, di tích – địa chỉ đỏ, văn hóa Xứ Đông – Thành phố Cảng, danh nhân, ẩm thực, lễ hội, thành tựu và khát vọng tuổi trẻ Hải Phòng.
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="qnum">03</span>
-              <span class="qtitle">Hồ sơ Vòng Sơ khảo cần chuẩn bị những thành phần nào?</span>
-              <span class="chev" aria-hidden="true">+</span>
-            </summary>
-            <div class="answer">
-              <p>
-                Hồ sơ nộp trực tuyến trước <strong>17h00 ngày 20/11/2026</strong> gồm: (1) Phiếu đăng ký dự thi theo mẫu; (2) Bản thuyết minh tối đa <strong>05 trang A4</strong> (tên tác phẩm, ý tưởng, bố cục, vật liệu, tương tác công nghệ, khả năng thi công); (3) Mặt bằng tổng thể/sơ đồ bố cục và tối thiểu <strong>02 hình ảnh minh họa</strong> (vẽ tay, ảnh ghép, 2D/3D hoặc phối cảnh); (4) Video giới thiệu tối đa 03 phút (khuyến khích, không bắt buộc).
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="qnum">04</span>
-              <span class="qtitle">Có được sử dụng phần mềm 3D hoặc AI tạo sinh khi thiết kế không?</span>
-              <span class="chev" aria-hidden="true">+</span>
-            </summary>
-            <div class="answer">
-              <p>
-                <strong>Được phép.</strong> Tác phẩm phải do tác giả/nhóm trực tiếp xây dựng, chưa từng đạt giải ở cuộc thi khác và không vi phạm sở hữu trí tuệ. Thí sinh được sử dụng phần mềm thiết kế và công cụ AI hỗ trợ sáng tạo nhưng phải chịu trách nhiệm về tính nguyên gốc, nguồn tư liệu chính xác; nếu dùng AI tạo sinh, khuyến khích <strong>ghi rõ công cụ và phạm vi sử dụng</strong> trong bản thuyết minh.
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="qnum">05</span>
-              <span class="qtitle">Cách thức thi Vòng Chung kết và quyền sử dụng tác phẩm đạt giải?</span>
-              <span class="chev" aria-hidden="true">+</span>
-            </summary>
-            <div class="answer">
-              <p>
-                10 tác phẩm vào Chung kết trưng bày tại Hội trường Ủy ban MTTQ Việt Nam TP. Hải Phòng (mô hình thu nhỏ/module kèm bảng giới thiệu khổ A1/A2 hoặc slide). Mỗi đội có tối đa <strong>07 phút thuyết trình</strong> và <strong>05 phút trả lời BGK</strong>. Ban Tổ chức được quyền sử dụng hình ảnh truyền thông phi thương mại và nghiên cứu, tinh chỉnh các phương án đạt giải để triển khai thực tế mô hình “Tự hào Hải Phòng”, bảo đảm ghi nhận tên tác giả/nhóm tác giả.
-              </p>
-            </div>
-          </details>
         </div>
       </div>
     </section>
 
-    <!-- ================= PRIZES SECTION ================= -->
+    <!-- ================= PRIZES SECTION (GIẢI THƯỞNG) ================= -->
     <section class="prizes" id="giai-thuong" aria-labelledby="prizes-title">
       <div class="container">
         <div class="prize-card reveal">
           <div class="prize-copy">
-            <p class="section-kicker section-kicker--light">HONOR THE CREATORS // CƠ CẤU GIẢI THƯỞNG</p>
+            <p class="section-kicker section-kicker--light">CƠ CẤU GIẢI THƯỞNG</p>
             <h2 id="prizes-title" class="title title--light">
               Vinh danh <span class="gradient-gold">bản sắc Hải Phòng.</span>
             </h2>
             <p class="prize-sub">
-              Tất cả các giải chính đều nhận <strong>Giấy chứng nhận của Ban Tổ chức và phần thưởng</strong>. Đặc biệt, Ban Thường vụ Thành đoàn Hải Phòng và Trường Cao đẳng FPT Polytechnic cơ sở Hải Phòng trao <strong>kinh phí thực hiện 01 mô hình đạt Giải Nhất</strong> (cùng các giải chuyên đề truyền thông nếu có).
+              Mỗi giải gồm <strong>Giấy chứng nhận của Ban Tổ chức và phần thưởng</strong> (có thể bổ sung giải chuyên đề truyền thông).
             </p>
           </div>
 
@@ -685,61 +523,194 @@
               <div class="prize-item prize-item--first">
                 <div class="prize-quantity">01</div>
                 <div class="prize-name">GIẢI NHẤT</div>
-                <span class="prize-note">+ Kinh phí dựng mô hình</span>
               </div>
               <div class="prize-item prize-item--second">
                 <div class="prize-quantity">02</div>
                 <div class="prize-name">GIẢI NHÌ</div>
-                <span class="prize-note">GCN &amp; Phần thưởng</span>
               </div>
               <div class="prize-item prize-item--third">
                 <div class="prize-quantity">03</div>
                 <div class="prize-name">GIẢI BA</div>
-                <span class="prize-note">GCN &amp; Phần thưởng</span>
               </div>
               <div class="prize-item prize-item--fourth">
                 <div class="prize-quantity">04</div>
                 <div class="prize-name">KHUYẾN KHÍCH</div>
-                <span class="prize-note">GCN &amp; Phần thưởng</span>
               </div>
             </div>
 
             <div class="prize-highlight-bar">
               <span class="phb-badge">ĐẶC QUYỀN GIẢI NHẤT</span>
-              <p>Được tài trợ một phần kinh phí thi công thực tế để nhân rộng mô hình “Tự hào Hải Phòng” trong hệ thống Đoàn – Hội – Đội thành phố.</p>
+              <p>Thành đoàn Hải Phòng và Trường CĐ FPT Polytechnic Hải Phòng trao một phần kinh phí dựng 01 mô hình Giải Nhất.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= REGISTRATION FORM SECTION ================= -->
+    <!-- ================= TIMELINE / SCHEDULE SECTION (LỊCH TRÌNH SAU GIẢI THƯỞNG, CÓ ĐỊA ĐIỂM) ================= -->
+    <section class="journey journey--timeline" id="lich-trinh" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="journey-header reveal">
+          <p class="section-kicker">MỐC THỜI GIAN</p>
+          <h2 id="journey-title" class="title">
+            Lịch trình &amp; <span class="gradient">Địa điểm tổ chức.</span>
+          </h2>
+          <div class="journey-period">
+            <span></span>
+            DỰ KIẾN TỔ CHỨC: <b>THÁNG 11 — 12.2026</b>
+          </div>
+        </div>
+
+        <ol class="roadmap">
+          <!-- Milestone 1 -->
+          <li class="roadmap-stop roadmap-stop--blue reveal">
+            <span class="roadmap-node" aria-hidden="true">01</span>
+            <details class="roadmap-card" open>
+              <summary>
+                <span class="roadmap-date">
+                  TỪ KHI PHÁT ĐỘNG — <time datetime="2026-11-20">17H00 · 20.11.2026</time>
+                </span>
+                <h3>Phát động &amp; Tiếp nhận hồ sơ</h3>
+                <span class="roadmap-location">📍 Hình thức: Đăng ký &amp; Nộp hồ sơ trực tuyến</span>
+                <span class="roadmap-toggle">
+                  <span class="when-closed">Xem chi tiết</span>
+                  <span class="when-open">Thu gọn</span>
+                  <svg class="roadmap-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="roadmap-content">
+                <ul>
+                  <li>Nộp hồ sơ trực tuyến tại biểu mẫu bên dưới trước <strong>17h00 ngày 20/11/2026</strong> (tối đa 02 phương án/đội).</li>
+                  <li>Gồm: Phiếu đăng ký, Thuyết minh ≤ 05 trang A4, Mặt bằng + tối thiểu 02 ảnh minh họa (khuyến khích Video ≤ 03 phút).</li>
+                </ul>
+                <a href="#dang-ky" data-scroll="dang-ky" class="roadmap-link">Nộp hồ sơ ngay ↗</a>
+              </div>
+            </details>
+            <div class="roadmap-caption" aria-hidden="true">
+              <span>GIAI ĐOẠN 01</span>
+              <p>Phát động cuộc thi &amp; nhận hồ sơ Vòng Sơ khảo.</p>
+            </div>
+          </li>
+
+          <!-- Milestone 2 -->
+          <li class="roadmap-stop roadmap-stop--gold reveal">
+            <span class="roadmap-node" aria-hidden="true">02</span>
+            <details class="roadmap-card">
+              <summary>
+                <span class="roadmap-date">
+                  DỰ KIẾN TUẦN 4 · THÁNG 11.2026
+                </span>
+                <h3>Chấm Sơ khảo &amp; Chọn Top 10</h3>
+                <span class="roadmap-location">📍 Địa điểm: Chấm hồ sơ trực tuyến</span>
+                <span class="roadmap-toggle">
+                  <span class="when-closed">Xem chi tiết</span>
+                  <span class="when-open">Thu gọn</span>
+                  <svg class="roadmap-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="roadmap-content">
+                <ul>
+                  <li>Kiểm tra tính hợp lệ hồ sơ; Ban Giám khảo chấm điểm theo thang 100 điểm và chọn <strong>10 tác phẩm xuất sắc nhất</strong>.</li>
+                </ul>
+                <a href="#the-le" data-scroll="the-le" class="roadmap-link">Xem thang điểm ↗</a>
+              </div>
+            </details>
+            <div class="roadmap-caption" aria-hidden="true">
+              <span>GIAI ĐOẠN 02</span>
+              <p>Đánh giá hồ sơ &amp; công bố 10 tác phẩm vào Chung kết.</p>
+            </div>
+          </li>
+
+          <!-- Milestone 3 -->
+          <li class="roadmap-stop roadmap-stop--blue reveal">
+            <span class="roadmap-node" aria-hidden="true">03</span>
+            <details class="roadmap-card">
+              <summary>
+                <span class="roadmap-date">
+                  07 NGÀY SAU CÔNG BỐ TOP 10
+                </span>
+                <h3>Workshop &amp; Coaching cùng chuyên gia</h3>
+                <span class="roadmap-location">📍 Địa điểm: Trường Cao đẳng FPT Polytechnic cơ sở Hải Phòng</span>
+                <span class="roadmap-toggle">
+                  <span class="when-closed">Xem chi tiết</span>
+                  <span class="when-open">Thu gọn</span>
+                  <svg class="roadmap-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="roadmap-content">
+                <ul>
+                  <li>Giảng viên FPT Polytechnic trực tiếp hướng dẫn (Coach) qua Workshop; các đội hoàn thiện phương án, sa bàn (1:10–1:20) và bảng giới thiệu A1/A2.</li>
+                </ul>
+              </div>
+            </details>
+            <div class="roadmap-caption" aria-hidden="true">
+              <span>GIAI ĐOẠN 03</span>
+              <p>Hoàn thiện mô hình &amp; kỹ năng thuyết trình cùng chuyên gia.</p>
+            </div>
+          </li>
+
+          <!-- Milestone 4 -->
+          <li class="roadmap-stop roadmap-stop--crimson reveal">
+            <span class="roadmap-node" aria-hidden="true">04</span>
+            <details class="roadmap-card">
+              <summary>
+                <span class="roadmap-date">
+                  DỰ KIẾN THÁNG <time datetime="2026-12">12.2026</time>
+                </span>
+                <h3>Triển lãm, Bảo vệ &amp; Trao giải</h3>
+                <span class="roadmap-location">📍 Địa điểm: Hội trường Ủy ban MTTQ Việt Nam TP. Hải Phòng</span>
+                <span class="roadmap-toggle">
+                  <span class="when-closed">Xem chi tiết</span>
+                  <span class="when-open">Thu gọn</span>
+                  <svg class="roadmap-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="roadmap-content">
+                <ul>
+                  <li>Trưng bày 10 tác phẩm Chung kết; mỗi đội thuyết trình tối đa 07 phút, trả lời BGK 05 phút và trao giải thưởng.</li>
+                </ul>
+                <a href="#giai-thuong" data-scroll="giai-thuong" class="roadmap-link">Xem cơ cấu giải thưởng ↗</a>
+              </div>
+            </details>
+            <div class="roadmap-caption" aria-hidden="true">
+              <span>GIAI ĐOẠN 04</span>
+              <p>Chung kết toàn thành phố &amp; vinh danh các tác phẩm xuất sắc.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= SUBMISSION FORM SECTION (ĐĂNG KÝ & NỘP HỒ SƠ VÒNG SƠ KHẢO) ================= -->
     <section class="register-section" id="dang-ky" aria-labelledby="register-title">
       <div class="container">
         <div class="register-panel reveal">
           <div class="register-header">
-            <p class="section-kicker">QUICK REGISTRATION // BƯỚC 1: ĐĂNG KÝ THAM GIA</p>
+            <p class="section-kicker">CỔNG NỘP BÀI VÒNG SƠ KHẢO</p>
             <h2 id="register-title" class="title">
-              Đăng ký tham gia <span class="gradient">Cuộc thi</span>
+              Đăng ký &amp; <span class="gradient">Nộp hồ sơ</span>
             </h2>
             <p class="lead">
-              Điền thông tin cơ bản trong 30 giây để nhận <strong>Mã đăng ký</strong>, lịch Workshop và hướng dẫn từ Ban Tổ chức. Phần nộp hồ sơ Sơ khảo (bản thuyết minh &amp; phối cảnh) sẽ được gửi qua <strong>link riêng</strong> trước <strong>17h00 ngày 20/11/2026</strong>.
+              Hoàn thiện thông tin thí sinh/nhóm và dán đường dẫn hồ sơ trước <strong>17h00 ngày 20/11/2026</strong>.
             </p>
           </div>
 
-          <div class="preview-notice" id="syncNotice">
-            <span class="preview-dot" aria-hidden="true"></span>
-            <span id="syncNoticeText">Thông tin đăng ký được đồng bộ trực tiếp về bảng tổng hợp của Ban Tổ chức và cấp ngay <strong>Mã đăng ký điện tử</strong>.</span>
-          </div>
-
           <form id="registrationForm" novalidate>
+            <!-- Khối 01: Thông tin Thí sinh / Nhóm -->
             <div class="form-group-block">
               <h3 class="block-title">
                 <span class="step-number">01</span>
-                <span>THÔNG TIN ĐĂNG KÝ THÍ SINH / NHÓM TÁC GIẢ</span>
+                <span>THÔNG TIN THÍ SINH / NHÓM TÁC GIẢ</span>
               </h3>
 
-              <!-- Chọn tư cách tham gia -->
               <div class="participation-switch" role="radiogroup" aria-label="Tư cách tham gia">
                 <label class="switch-option">
                   <input type="radio" name="entryType" value="group" checked />
@@ -753,15 +724,15 @@
 
               <div class="form-grid">
                 <div class="field-col" id="groupNameField">
-                  <label class="field-label" for="regGroupName">Tên nhóm dự kiến <span class="req">*</span></label>
+                  <label class="field-label" for="regGroupName">Tên nhóm <span class="req">*</span></label>
                   <div class="input-box">
-                    <input id="regGroupName" name="groupName" type="text" class="form-input" placeholder="Ví dụ: Cảng Trẻ Creative / Hoa Phượng Studio" required />
+                    <input id="regGroupName" name="groupName" type="text" class="form-input" placeholder="Ví dụ: Cảng Trẻ Creative" required />
                   </div>
                   <span class="field-error" id="errGroupName"></span>
                 </div>
 
                 <div class="field-col" id="memberCountField">
-                  <label class="field-label" for="regMemberCount">Số thành viên dự kiến (2–5)</label>
+                  <label class="field-label" for="regMemberCount">Số thành viên (2–5)</label>
                   <div class="input-box">
                     <select id="regMemberCount" name="memberCount" class="form-input form-select">
                       <option value="2">02 thành viên</option>
@@ -781,7 +752,15 @@
                 </div>
 
                 <div class="field-col">
-                  <label class="field-label" for="regPhone">Số điện thoại / Zalo liên hệ <span class="req">*</span></label>
+                  <label class="field-label" for="regDob">Ngày sinh (Từ đủ 15 tuổi trở lên) <span class="req">*</span></label>
+                  <div class="input-box">
+                    <input id="regDob" name="dob" type="date" class="form-input" max="2011-11-20" required />
+                  </div>
+                  <span class="field-error" id="errDob"></span>
+                </div>
+
+                <div class="field-col">
+                  <label class="field-label" for="regPhone">Số điện thoại / Zalo <span class="req">*</span></label>
                   <div class="input-box">
                     <input id="regPhone" name="phone" type="tel" class="form-input" placeholder="Ví dụ: 0912345678" maxlength="11" required />
                   </div>
@@ -796,10 +775,10 @@
                   <span class="field-error" id="errEmail"></span>
                 </div>
 
-                <div class="field-col">
-                  <label class="field-label" for="regUnit">Đơn vị / Trường học / Địa phương <span class="req">*</span></label>
+                <div class="field-col full-width">
+                  <label class="field-label" for="regUnit">Đơn vị / Trường Đại học, Cao đẳng / Đoàn cơ sở <span class="req">*</span></label>
                   <div class="input-box">
-                    <input id="regUnit" name="unit" type="text" class="form-input" list="hpUnitsList" placeholder="Chọn hoặc nhập tên trường ĐH/CĐ, Đoàn cơ sở..." required />
+                    <input id="regUnit" name="unit" type="text" class="form-input" list="hpUnitsList" placeholder="Chọn hoặc nhập tên trường ĐH/CĐ, Đoàn xã/phường/đặc khu hoặc thí sinh tự do" required />
                     <datalist id="hpUnitsList">
                       <option value="Trường Cao đẳng FPT Polytechnic cơ sở Hải Phòng"></option>
                       <option value="Trường Đại học Hàng hải Việt Nam"></option>
@@ -812,6 +791,76 @@
                   </div>
                   <span class="field-error" id="errUnit"></span>
                 </div>
+
+                <div class="field-col full-width" id="memberListField">
+                  <label class="field-label" for="regMembers">Thành viên khác trong nhóm (Không bắt buộc)</label>
+                  <div class="input-box">
+                    <input id="regMembers" name="members" type="text" class="form-input" placeholder="Ghi họ tên các thành viên còn lại (mỗi người chỉ tham gia tối đa 01 nhóm)" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Khối 02: Hồ sơ Phương án Dự thi (Vòng Sơ khảo) -->
+            <div class="form-group-block">
+              <h3 class="block-title">
+                <span class="step-number">02</span>
+                <span>HỒ SƠ PHƯƠNG ÁN DỰ THI (VÒNG SƠ KHẢO)</span>
+              </h3>
+
+              <div class="form-grid">
+                <div class="field-col full-width">
+                  <label class="field-label" for="regProjectName">Tên tác phẩm / phương án thiết kế <span class="req">*</span></label>
+                  <div class="input-box">
+                    <input id="regProjectName" name="projectName" type="text" class="form-input" placeholder="Ví dụ: Trạm Ký Ức Hoa Phượng Đỏ" required />
+                  </div>
+                  <span class="field-error" id="errProjectName"></span>
+                </div>
+
+                <div class="field-col">
+                  <label class="field-label" for="regEntryIndex">Số thứ tự phương án (Tối đa 02/đội)</label>
+                  <div class="input-box">
+                    <select id="regEntryIndex" name="entryIndex" class="form-input form-select">
+                      <option value="Phương án 01" selected>Phương án 01</option>
+                      <option value="Phương án 02">Phương án 02</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field-col">
+                  <label class="field-label" for="regDimensions">Quy mô không gian dự kiến (5–10m², cao ≤ 2,8m)</label>
+                  <div class="input-box">
+                    <select id="regDimensions" name="dimensions" class="form-input form-select">
+                      <option value="5m² – 7m² · Cao ≤ 2,8m">5m² – 7m² · Cao ≤ 2,8m</option>
+                      <option value="7m² – 10m² · Cao ≤ 2,8m" selected>7m² – 10m² · Cao ≤ 2,8m</option>
+                      <option value="Kèm sa bàn tỷ lệ 1:10 – 1:20">Kèm sa bàn tỷ lệ 1:10 – 1:20</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field-col full-width">
+                  <label class="field-label" for="regFolderUrl">Link thư mục hồ sơ dự thi (Google Drive / OneDrive) <span class="req">*</span></label>
+                  <div class="input-box">
+                    <input id="regFolderUrl" name="folderUrl" type="url" class="form-input" placeholder="https://drive.google.com/drive/folders/..." required />
+                  </div>
+                  <span class="field-hint">Mở quyền xem công khai; chứa Bản thuyết minh (≤ 05 trang A4) và Mặt bằng + ≥ 02 ảnh minh họa.</span>
+                  <span class="field-error" id="errFolderUrl"></span>
+                </div>
+
+                <div class="field-col">
+                  <label class="field-label" for="regVideoUrl">Link Video giới thiệu (≤ 03 phút — Không bắt buộc)</label>
+                  <div class="input-box">
+                    <input id="regVideoUrl" name="videoUrl" type="url" class="form-input" placeholder="https://drive.google.com/... hoặc YouTube" />
+                  </div>
+                  <span class="field-error" id="errVideoUrl"></span>
+                </div>
+
+                <div class="field-col">
+                  <label class="field-label" for="regAiUsage">Công cụ thiết kế / AI sử dụng (Không bắt buộc)</label>
+                  <div class="input-box">
+                    <input id="regAiUsage" name="aiUsage" type="text" class="form-input" placeholder="Ví dụ: SketchUp, Photoshop, hoặc công cụ AI hỗ trợ" />
+                  </div>
+                </div>
               </div>
 
               <div class="consent-field" id="consentBox">
@@ -820,7 +869,7 @@
                 </label>
                 <div class="consent-copy">
                   <label for="regConsent">
-                    Tôi xác nhận bản thân và các thành viên đều từ <strong>15 tuổi trở lên</strong> (hoặc là sinh viên ĐH, CĐ tại TP. Hải Phòng), thông tin đăng ký chính xác và đồng ý tuân thủ Thể lệ Cuộc thi “Tự hào Hải Phòng” năm 2026.
+                    Tôi xác nhận đủ điều kiện độ tuổi (≥ 15 tuổi hoặc sinh viên ĐH, CĐ tại Hải Phòng), tác phẩm do cá nhân/nhóm trực tiếp thực hiện, chưa đạt giải cuộc thi khác, không vi phạm bản quyền và đồng ý tuân thủ Thể lệ Cuộc thi.
                   </label>
                   <p class="field-error" id="errConsent"></p>
                 </div>
@@ -830,90 +879,58 @@
             <div class="form-actions">
               <p class="form-global-error" id="formGlobalError" role="alert" hidden></p>
               <button type="submit" id="submitBtn" class="btn btn-crimson btn-submit">
-                <span id="submitBtnLabel">XÁC NHẬN ĐĂNG KÝ THAM GIA</span>
+                <span id="submitBtnLabel">NỘP HỒ SƠ DỰ THI</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </button>
-
-              <!-- Khối tách riêng Cổng nộp hồ sơ Sơ khảo (cập nhật link sau) -->
-              <div class="submission-portal-card" id="submissionPortalCard">
-                <div class="spc-text">
-                  <span class="spc-kicker">BƯỚC 2 · NỘP HỒ SƠ SƠ KHẢO (TÁCH RIÊNG)</span>
-                  <p id="submissionPortalDesc">
-                    Sau khi hoàn thiện Bản thuyết minh (≤ 05 trang A4) &amp; Phối cảnh, bạn gửi bài qua cổng nộp hồ sơ riêng của Ban Tổ chức (sẽ cập nhật link tại đây và qua Email/Zalo đã đăng ký trước <strong>17h00 · 20/11/2026</strong>).
-                  </p>
-                </div>
-                <a href="#hanh-trinh" data-scroll="hanh-trinh" class="btn btn-royal-outline btn-small" id="submissionPortalBtn">
-                  <span>Xem hướng dẫn hồ sơ</span>
-                </a>
-              </div>
             </div>
           </form>
         </div>
       </div>
     </section>
 
-    <!-- ================= KEY VISUAL / MODEL REFERENCE SHOWCASE ================= -->
-    <section class="certificate-section" id="mau-thiet-ke" aria-labelledby="showcase-title">
-      <div class="container">
-        <div class="certificate-panel reveal">
-          <div class="certificate-heading">
-            <p class="section-kicker">MODEL INSPIRATION // BỘ NHẬN DIỆN &amp; KHÔNG GIAN GỢI Ý</p>
-            <h2 id="showcase-title" class="certificate-title">
-              Không gian mô hình mẫu <span class="gradient">“Tự hào Hải Phòng”</span>
-            </h2>
-            <p>
-              Gợi ý trực quan sự kết hợp hài hòa giữa kiến trúc lịch sử (Nhà hát lớn, Tượng đài Nữ tướng Lê Chân), thành tựu hiện đại (Cảng Hải Phòng, Cầu dây văng), điểm check-in hoa phượng đỏ và mã QR tương tác số.
-            </p>
-          </div>
-
-          <figure class="certificate-preview">
-            <button type="button" class="certificate-image-link" id="openShowcasePosterBtn" aria-label="Mở ảnh bộ nhận diện Cuộc thi Tự hào Hải Phòng 2026 kích thước đầy đủ">
-              <img src="./assets/poster-tu-hao-hai-phong.jpg" width="1024" height="682" loading="lazy" alt="Poster và mô hình minh họa không gian trưng bày Tự hào Hải Phòng 2026" />
-            </button>
-            <figcaption>
-              Nhấp vào hình để phóng to chi tiết bảng màu chuẩn (Đỏ Hoa Phượng · Xanh Hải Cảng · Vàng Nắng Cảng) và bố cục không gian trưng bày.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PARTNERS / ORGANIZERS SECTION ================= -->
+    <!-- ================= PARTNERS / ORGANIZERS SECTION (TIÊU ĐỀ TO, TÊN NHỎ) ================= -->
     <section class="partners" id="don-vi" aria-labelledby="partners-title">
       <div class="container">
         <div class="partners-heading reveal">
-          <p class="section-kicker">TOGETHER, WE BUILD PRIDE // ĐƠN VỊ TỔ CHỨC &amp; PHỐI HỢP</p>
-          <h2 id="partners-title" class="title">
-            Cùng kiến tạo <span class="gradient">không gian Tự hào Hải Phòng.</span>
+          <p class="section-kicker">CƠ QUAN CHỦ TRÌ &amp; PHỐI HỢP</p>
+          <h2 id="partners-title" class="title partners-main-title">
+            Đơn vị <span class="gradient">Tổ chức</span>
           </h2>
         </div>
 
         <!-- Nhóm 1: Cơ quan tổ chức chính -->
         <div class="partner-group partner-group--organizer reveal">
-          <h3 class="partner-group-title"><span>BAN TỔ CHỨC CUỘC THI</span></h3>
-          <ul class="partner-grid partner-grid--two">
-            <li class="partner-card partner-card--featured">
+          <ul class="partner-grid partner-grid--three">
+            <li class="partner-card partner-card--org">
               <div class="partner-logo-surface">
                 <img src="./assets/logo-doan.png" alt="Logo Đoàn Thanh niên Cộng sản Hồ Chí Minh - Thành đoàn Hải Phòng" class="partner-logo partner-logo--doan" loading="lazy" />
               </div>
               <div class="partner-meta">
-                <span class="partner-role partner-role--red">CƠ QUAN THƯỜNG TRỰC CUỘC THI</span>
+                <span class="partner-role partner-role--red">CƠ QUAN THƯỜNG TRỰC</span>
                 <h4>Thành đoàn Hải Phòng</h4>
-                <p>Chủ trì Kế hoạch, Thể lệ, Ban Giám khảo; Tổ Tuyên giáo tiếp nhận hồ sơ &amp; lựa chọn mô hình nhân rộng toàn thành phố.</p>
               </div>
             </li>
 
-            <li class="partner-card partner-card--featured">
+            <li class="partner-card partner-card--org">
               <div class="partner-logo-surface partner-logo-surface--white">
                 <img src="./assets/logo-fpoly.jpg" alt="Logo Trường Cao đẳng FPT Polytechnic cơ sở Hải Phòng" class="partner-logo partner-logo--fpoly" loading="lazy" />
               </div>
               <div class="partner-meta">
                 <span class="partner-role partner-role--orange">ĐƠN VỊ PHỐI HỢP TỔ CHỨC</span>
                 <h4>Trường Cao đẳng FPT Polytechnic cơ sở Hải Phòng</h4>
-                <p>Hỗ trợ chuyên môn Thiết kế – Mỹ thuật – Công nghệ; tổ chức Workshop &amp; cử giảng viên làm Huấn luyện viên cho Top 10 Chung kết.</p>
+              </div>
+            </li>
+
+            <li class="partner-card partner-card--org">
+              <div class="partner-logo-surface partner-logo-surface--sky">
+                <img src="./assets/logo-hoi-sinh-vien.webp" alt="Logo Hội Sinh viên Việt Nam" class="partner-logo partner-logo--hsv" loading="lazy" />
+              </div>
+              <div class="partner-meta">
+                <span class="partner-role partner-role--blue">ĐƠN VỊ PHỐI HỢP TỔ CHỨC</span>
+                <h4>Hội Sinh viên Việt Nam</h4>
               </div>
             </li>
           </ul>
@@ -921,41 +938,27 @@
 
         <!-- Nhóm 2: Đơn vị triển khai & Địa điểm -->
         <div class="partner-group reveal">
-          <h3 class="partner-group-title"><span>ĐƠN VỊ TRIỂN KHAI &amp; ĐỊA ĐIỂM CHUNG KẾT</span></h3>
+          <h3 class="partners-sub-title">Đơn vị triển khai &amp; Địa điểm Chung kết</h3>
           <ul class="partner-grid partner-grid--three">
-            <li class="partner-card">
-              <div class="partner-icon-badge partner-icon-badge--blue" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                </svg>
+            <li class="partner-card partner-card--unit">
+              <div class="partner-3d-frame">
+                <img src="./assets/icon-3d-university.jpg" alt="Biểu tượng 3D Đoàn các trường Đại học, Cao đẳng" class="partner-3d-icon" width="512" height="512" loading="lazy" />
               </div>
               <h4>Đoàn các trường Đại học, Cao đẳng</h4>
-              <p>Tuyên truyền, vận động sinh viên tham gia; mỗi đơn vị có ít nhất 01 sản phẩm dự thi chất lượng.</p>
             </li>
 
-            <li class="partner-card">
-              <div class="partner-icon-badge partner-icon-badge--red" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
+            <li class="partner-card partner-card--unit">
+              <div class="partner-3d-frame">
+                <img src="./assets/icon-3d-community.jpg" alt="Biểu tượng 3D Đoàn các xã, phường, đặc khu" class="partner-3d-icon" width="512" height="512" loading="lazy" />
               </div>
               <h4>Đoàn các xã, phường, đặc khu</h4>
-              <p>Phát động tới đông đảo đoàn viên thanh niên và Nhân dân từ 15 tuổi trở lên trên toàn TP. Hải Phòng.</p>
             </li>
 
-            <li class="partner-card">
-              <div class="partner-icon-badge partner-icon-badge--gold" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
-                  <path d="M3 21h18M5 21V7l7-4 7 4v14"></path>
-                  <path d="M9 21v-6h6v6"></path>
-                </svg>
+            <li class="partner-card partner-card--unit">
+              <div class="partner-3d-frame">
+                <img src="./assets/icon-3d-hall.jpg" alt="Biểu tượng 3D Hội trường Ủy ban MTTQ Việt Nam TP. Hải Phòng" class="partner-3d-icon" width="512" height="512" loading="lazy" />
               </div>
               <h4>Hội trường Ủy ban MTTQ Việt Nam TP. Hải Phòng</h4>
-              <p>Địa điểm trưng bày 10 tác phẩm xuất sắc, tổ chức Vòng Chung kết thuyết trình &amp; Lễ trao giải (tháng 12/2026).</p>
             </li>
           </ul>
         </div>
@@ -966,14 +969,14 @@
     <section class="cta" aria-label="Kêu gọi tham gia cuộc thi">
       <div class="container">
         <div class="cta-panel reveal">
-          <p class="cta-eyebrow">PRIDE OF HAI PHONG // SÁNG TẠO KHÔNG GIAN – LAN TỎA BẢN SẮC</p>
+          <p class="cta-eyebrow">TỰ HÀO HẢI PHÒNG 2026</p>
           <h2>Sẵn sàng kể câu chuyện<br />Hải Phòng theo cách của bạn?</h2>
           <p>
-            Gửi phương án thiết kế mô hình trước <strong>17h00 ngày 20/11/2026</strong> để góp mặt trong Top 10 Vòng Chung kết và nhận cơ hội hiện thực hóa mô hình trên toàn thành phố.
+            Đăng ký giữ suất tham gia và hoàn thiện phương án dự thi trước <strong>17h00 ngày 20/11/2026</strong>.
           </p>
           <div class="cta-buttons">
             <button type="button" class="btn btn-crimson" data-scroll="dang-ky">
-              <span>ĐĂNG KÝ DỰ THI NGAY</span>
+              <span>ĐĂNG KÝ THAM GIA NGAY</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -994,24 +997,29 @@
       <div class="footer-wrap">
         <div class="footer-brand-block">
           <a href="#top" data-scroll="top" class="footer-brand-link">
-            <img src="./assets/logo-doan.png" alt="Logo Đoàn TNCS Hồ Chí Minh" class="footer-logo" />
+            <span class="footer-contest-badge" aria-hidden="true">
+              <img src="./assets/logo-cuoc-thi.png" alt="Logo Cuộc thi Tự hào Hải Phòng 2026" class="footer-contest-logo" />
+            </span>
             <div>
               <div class="footer-brand">CUỘC THI THIẾT KẾ MÔ HÌNH <span>“TỰ HÀO HẢI PHÒNG” 2026</span></div>
-              <small>Sáng tạo không gian – Lan tỏa bản sắc · Một nhận diện chung – Nhiều cách kể về Hải Phòng</small>
+              <small>“Sáng tạo không gian – Lan tỏa bản sắc”</small>
             </div>
           </a>
         </div>
 
         <div class="footer-contact">
-          <span class="footer-label">ĐẦU MỐI THƯỜNG TRỰC</span>
+          <span class="footer-label">LIÊN HỆ BAN TỔ CHỨC</span>
           <p>Tổ Tuyên giáo — Thành đoàn Hải Phòng &amp; Trường Cao đẳng FPT Polytechnic cơ sở Hải Phòng</p>
+          <!-- Cập nhật Email chính thức của BTC vào thẻ span/a dưới đây -->
+          <p class="footer-email">Email: <span id="btcContactEmail">Đang cập nhật email chính thức của BTC</span></p>
         </div>
 
         <nav class="footer-links" aria-label="Liên kết chân trang">
-          <a href="#gioi-thieu" data-scroll="gioi-thieu">Giới thiệu</a>
-          <a href="#hanh-trinh" data-scroll="hanh-trinh">Lộ trình</a>
+          <a href="#yeu-cau" data-scroll="yeu-cau">Yêu cầu</a>
+          <a href="#noi-dung" data-scroll="noi-dung">Nội dung</a>
           <a href="#the-le" data-scroll="the-le">Thể lệ</a>
           <a href="#giai-thuong" data-scroll="giai-thuong">Giải thưởng</a>
+          <a href="#lich-trinh" data-scroll="lich-trinh">Lịch trình</a>
           <a href="#dang-ky" data-scroll="dang-ky">Đăng ký</a>
         </nav>
       </div>
@@ -1025,7 +1033,7 @@
   <!-- ================= LIGHTBOX POSTER MODAL ================= -->
   <dialog id="posterModal" class="modal modal--poster" aria-labelledby="posterModalTitle">
     <div class="modal-head">
-      <h3 id="posterModalTitle">Bộ nhận diện &amp; Không gian mẫu “Tự hào Hải Phòng” 2026</h3>
+      <h3 id="posterModalTitle">Cuộc thi Thiết kế Mô hình “Tự hào Hải Phòng” 2026</h3>
       <button type="button" class="dialog-close" data-close-modal="posterModal" aria-label="Đóng hộp thoại">×</button>
     </div>
     <img src="./assets/poster-tu-hao-hai-phong.jpg" alt="Poster chính thức Cuộc thi Thiết kế Mô hình Tự hào Hải Phòng 2026" class="modal-poster-img" />
@@ -1036,15 +1044,14 @@
     <button type="button" class="dialog-close" data-close-modal="receiptModal" aria-label="Đóng phiếu xác nhận">×</button>
     <div class="receipt-head">
       <div class="receipt-check" aria-hidden="true">✓</div>
-      <p class="section-kicker">ĐĂNG KÝ THAM GIA THÀNH CÔNG</p>
-      <h3 id="receiptModalTitle">Phiếu Xác Nhận Đăng Ký</h3>
-      <p class="receipt-code">Mã đăng ký của bạn: <strong id="rcCode">HP26-0001</strong></p>
+      <p class="section-kicker">NỘP HỒ SƠ THÀNH CÔNG</p>
+      <h3 id="receiptModalTitle">Phiếu Xác Nhận Dự Thi Điện Tử</h3>
+      <p class="receipt-code">Mã hồ sơ: <strong id="rcCode">HP26-0001</strong></p>
     </div>
     <dl class="receipt-details" id="receiptDetails"></dl>
     <div class="receipt-actions">
-      <button type="button" class="btn btn-crimson btn-small" id="copyReceiptBtn">Sao chép phiếu đăng ký</button>
+      <button type="button" class="btn btn-crimson btn-small" id="copyReceiptBtn">Sao chép phiếu</button>
       <button type="button" class="btn btn-royal-outline btn-small" id="downloadReceiptBtn">Tải phiếu (.txt)</button>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-small" id="receiptPortalBtn" hidden>Nộp hồ sơ Sơ khảo ↗</a>
     </div>
     <p class="receipt-feedback" id="receiptFeedback" role="status"></p>
   </dialog>
