@@ -638,24 +638,163 @@ textarea:focus-visible {
   display: block;
 }
 
-/* ================= COUNTDOWN SECTION (STANDALONE CENTERED) ================= */
+/* ================= COUNTDOWN SECTION (FLANKED CENTERED STAGE) ================= */
 .countdown-section--solo {
-  padding: 52px 0 68px;
-  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding: 58px 0 72px;
+  background:
+    radial-gradient(640px 260px at 50% 62%, rgba(21, 101, 216, 0.08), transparent 72%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
-.countdown-solo {
-  max-width: 760px;
-  margin: 0 auto;
+.countdown-flank-art {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-48%);
+  width: 240px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.countdown-flank-art--left {
+  left: max(0px, calc(50% - 700px));
+}
+
+.countdown-flank-art--right {
+  right: max(0px, calc(50% - 700px));
+}
+
+.countdown-container {
+  position: relative;
+  z-index: 1;
+}
+
+.countdown-head {
   text-align: center;
+  margin-bottom: 24px;
+}
+
+.countdown-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  background: #fff1f2;
+  border: 1px solid rgba(189, 4, 23, 0.16);
+  color: var(--crimson-700);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--crimson-600);
+  box-shadow: 0 0 0 4px rgba(189, 4, 23, 0.15);
 }
 
 .countdown-solo-title {
-  margin: 0 0 22px;
+  margin: 0;
   font-size: clamp(22px, 3vw, 32px);
   font-weight: 900;
   letter-spacing: -0.02em;
   color: var(--navy-950);
+}
+
+.countdown-stage {
+  display: grid;
+  grid-template-columns: 224px minmax(0, 680px) 224px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown-wing {
+  display: grid;
+  gap: 14px;
+}
+
+.wing-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 15px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1.5px solid var(--edge);
+  box-shadow: 0 10px 24px rgba(9, 55, 149, 0.06);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.wing-card--blue {
+  border-left: 4px solid var(--blue-600);
+  background: linear-gradient(135deg, #f4f8ff 0%, #ffffff 70%);
+}
+
+.wing-card--gold {
+  border-left: 4px solid var(--fpt-orange);
+  background: linear-gradient(135deg, #fff9ee 0%, #ffffff 70%);
+}
+
+.wing-card--crimson {
+  border-left: 4px solid var(--crimson-600);
+  background: linear-gradient(135deg, #fff5f6 0%, #ffffff 70%);
+}
+
+.wing-card--cta {
+  text-decoration: none;
+  border-left: 4px solid var(--royal-800);
+  background: linear-gradient(135deg, #093795 0%, #1565d8 100%);
+  border-color: rgba(9, 55, 149, 0.25);
+  box-shadow: 0 12px 26px rgba(9, 55, 149, 0.2);
+}
+
+.wing-card--cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(9, 55, 149, 0.28);
+}
+
+.wing-kicker {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  color: var(--royal-800);
+}
+
+.wing-value {
+  font-size: clamp(14.5px, 1.35vw, 16.5px);
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  color: var(--navy-950);
+  line-height: 1.25;
+}
+
+.wing-sub {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-body);
+  line-height: 1.4;
+}
+
+.wing-card--cta .wing-kicker {
+  color: #bfe0ff;
+}
+
+.wing-card--cta .wing-value {
+  color: #ffffff;
+}
+
+.wing-card--cta .wing-sub {
+  color: rgba(255, 255, 255, 0.84);
 }
 
 /* Split-tone Countdown Card */
@@ -2551,6 +2690,31 @@ textarea:focus-visible {
   .prize-card {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .countdown-flank-art {
+    display: none;
+  }
+
+  .countdown-stage {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+
+  .timer-wrap--solo {
+    order: 1;
+  }
+
+  .countdown-wing--left {
+    order: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .countdown-wing--right {
+    order: 3;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .partner-card--featured {

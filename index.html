@@ -138,11 +138,51 @@
       </div>
     </section>
 
-    <!-- ================= COUNTDOWN SECTION (CĂN GIỮA ĐỘC LẬP) ================= -->
+    <!-- ================= COUNTDOWN SECTION (CĂN GIỮA ĐỘC LẬP + CỤM THÔNG SỐ 2 BÊN) ================= -->
     <section class="countdown-section countdown-section--solo" id="dem-nguoc" aria-labelledby="countdown-heading">
-      <div class="container">
-        <div class="countdown-solo reveal">
+      <!-- Họa tiết cầu dây văng & hoa phượng trang trí 2 bên -->
+      <svg class="countdown-flank-art countdown-flank-art--left" viewBox="0 0 260 280" fill="none" aria-hidden="true">
+        <path d="M18 265 L96 42 L112 265" stroke="#093795" stroke-opacity="0.1" stroke-width="2" />
+        <path d="M96 52 L198 228 M96 76 L172 228 M96 102 L144 228 M96 68 L22 228" stroke="#1565D8" stroke-opacity="0.1" stroke-width="1.3" stroke-dasharray="4 4" />
+        <path d="M0 232 Q72 208 148 230 T256 226" stroke="#7DC2FC" stroke-opacity="0.28" stroke-width="1.6" />
+        <path d="M36 62 C54 44 76 48 80 68 C62 82 40 78 36 62Z" fill="#DF1E33" fill-opacity="0.11" />
+        <path d="M58 96 C70 84 86 86 88 99 C76 110 60 107 58 96Z" fill="#F26F21" fill-opacity="0.13" />
+        <circle cx="152" cy="74" r="4" fill="#1565D8" fill-opacity="0.18" />
+        <circle cx="34" cy="148" r="3" fill="#BD0417" fill-opacity="0.2" />
+      </svg>
+
+      <svg class="countdown-flank-art countdown-flank-art--right" viewBox="0 0 260 280" fill="none" aria-hidden="true">
+        <path d="M242 265 L164 42 L148 265" stroke="#BD0417" stroke-opacity="0.1" stroke-width="2" />
+        <path d="M164 52 L62 228 M164 76 L88 228 M164 102 L116 228 M164 68 L238 228" stroke="#DF1E33" stroke-opacity="0.09" stroke-width="1.3" stroke-dasharray="4 4" />
+        <path d="M4 226 Q80 206 156 230 T260 232" stroke="#F5BE57" stroke-opacity="0.32" stroke-width="1.6" />
+        <path d="M224 62 C206 44 184 48 180 68 C198 82 220 78 224 62Z" fill="#1565D8" fill-opacity="0.11" />
+        <path d="M202 96 C190 84 174 86 172 99 C184 110 200 107 202 96Z" fill="#BD0417" fill-opacity="0.12" />
+        <circle cx="108" cy="74" r="4" fill="#F26F21" fill-opacity="0.22" />
+        <circle cx="226" cy="148" r="3" fill="#093795" fill-opacity="0.18" />
+      </svg>
+
+      <div class="container countdown-container">
+        <div class="countdown-head reveal">
+          <span class="countdown-eyebrow">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            MỐC ĐÓNG CỔNG TRỰC TUYẾN
+          </span>
           <h2 id="countdown-heading" class="countdown-solo-title">HẠN NỘP BÀI VÒNG SƠ KHẢO</h2>
+        </div>
+
+        <div class="countdown-stage reveal">
+          <div class="countdown-wing countdown-wing--left">
+            <div class="wing-card wing-card--blue">
+              <span class="wing-kicker">QUY MÔ ĐỘI THI</span>
+              <strong class="wing-value">01 – 05 người</strong>
+              <span class="wing-sub">Tối đa 02 phương án / đội</span>
+            </div>
+            <div class="wing-card wing-card--gold">
+              <span class="wing-kicker">CHỌN LỌC SƠ KHẢO</span>
+              <strong class="wing-value">Top 10 mô hình</strong>
+              <span class="wing-sub">Vào Workshop &amp; Chung kết</span>
+            </div>
+          </div>
 
           <div class="timer-wrap timer-wrap--solo">
             <div class="timer-top">
@@ -176,6 +216,19 @@
               </svg>
               <span>Hạn nhận hồ sơ: <strong>17h00 ngày 20/11/2026</strong></span>
             </p>
+          </div>
+
+          <div class="countdown-wing countdown-wing--right">
+            <div class="wing-card wing-card--crimson">
+              <span class="wing-kicker">KHÔNG GIAN MÔ HÌNH</span>
+              <strong class="wing-value">5m² – 10m²</strong>
+              <span class="wing-sub">Chiều cao tối đa 2,8m</span>
+            </div>
+            <a href="#dang-ky" data-scroll="dang-ky" class="wing-card wing-card--cta">
+              <span class="wing-kicker">CỔNG TIẾP NHẬN</span>
+              <strong class="wing-value">Nộp bài ngay ↗</strong>
+              <span class="wing-sub">Gửi link Drive / OneDrive</span>
+            </a>
           </div>
         </div>
       </div>
