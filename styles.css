@@ -847,7 +847,7 @@ textarea:focus-visible {
 .brief-section {
   padding: 80px 0;
   background: #ffffff;
-  border-bottom: 1px solid var(--edge);
+  border-top: 1px solid var(--edge);
 }
 
 .brief-header {
