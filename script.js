@@ -9,28 +9,68 @@
    */
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwyy7hsO6nbA9hwWiJ8EeqUjC3Z9S_-ufXeI1c_ht6taFP9B0AJF__xsjNCAPiKQd2IXg/exec";
 
-  const PILLAR_CONTENT = {
-    identity: {
-      title: "Điểm nhận diện “Tự hào Hải Phòng”:",
-      text: "Thể hiện tên, chủ đề, infographic, biểu tượng hoa phượng, cầu cảng hoặc yếu tố đặc trưng của thành phố để tạo dấu ấn tổng thể."
+  const DESIGN_MODELS = [
+    {
+      id: "bachdang",
+      indexLabel: "MẪU 01 · DẤU ẤN BẠCH ĐẰNG",
+      name: "Tự hào Hải Phòng — Dấu ấn Bạch Đằng",
+      topic: "CHỦ ĐỀ 01 · LỊCH SỬ & TRUYỀN THỐNG CÁCH MẠNG",
+      src: "./assets/mau-thiet-ke-dau-an-bach-dang.jpg",
+      alt: "Phối cảnh 3D mẫu thiết kế Tự hào Hải Phòng - Dấu ấn Bạch Đằng",
+      chips: [
+        "🏛️ Vòm nhận diện gỗ & đại cảnh Ngô Quyền",
+        "⛵ Sa bàn thuyền chiến trong tủ kính",
+        "📜 Tranh đại cảnh & Niên biểu 938, 981, 1288",
+        "📸 Khung check-in thuyền vượt sóng"
+      ],
+      desc: "Không gian mở 5m² – 10m² tái hiện hào khí Bạch Đằng giang với tranh tường lịch sử, bảng niên biểu 3 lần chiến thắng giặc ngoại xâm, sa bàn thuyền chiến và khung chụp ảnh check-in sáng tạo."
     },
-    display: {
-      title: "Nội dung trưng bày đa chất liệu:",
-      text: "Kết hợp tranh, ảnh, bản đồ, infographic, hiện vật, sa bàn (1:10–1:20) hoặc sản phẩm mỹ thuật kể câu chuyện Hải Phòng lịch sử – hôm nay – tương lai."
+    {
+      id: "bienlon",
+      indexLabel: "MẪU 02 · VƯƠN RA BIỂN LỚN",
+      name: "Tự hào Hải Phòng — Vươn ra biển lớn",
+      topic: "CHỦ ĐỀ 02 · VĂN HÓA XỨ ĐÔNG & THÀNH PHỐ CẢNG",
+      src: "./assets/mau-thiet-ke-vuon-ra-bien-lon.jpg",
+      alt: "Phối cảnh 3D mẫu thiết kế Tự hào Hải Phòng - Vươn ra biển lớn",
+      chips: [
+        "⚓ Vòm nhận diện bánh lái & tàu hàng",
+        "🚢 Sa bàn cảng container & cẩu giàn STS",
+        "🏝️ Infographic Di sản thiên nhiên vịnh Cát Bà",
+        "📸 Khung check-in xanh dương ngọn hải đăng"
+      ],
+      desc: "Khai thác thế mạnh kinh tế biển với gam màu xanh đại dương, khắc họa vị thế cửa ngõ hàng hải quốc tế, trung tâm logistics hiện đại, Di sản thiên nhiên thế giới Cát Bà cùng sa bàn cảng biển sống động."
     },
-    checkin: {
-      title: "Điểm check-in lan tỏa:",
-      text: "Bố trí góc chụp ảnh thẩm mỹ, thoáng mở trong diện tích 5m²–10m² để đoàn viên, sinh viên và khách tham quan lưu lại khoảnh khắc và chia sẻ rộng rãi."
+    {
+      id: "hoaphuong",
+      indexLabel: "MẪU 03 · HOA PHƯỢNG ĐỎ",
+      name: "Tự hào Hải Phòng — Thành phố Hoa Phượng Đỏ",
+      topic: "CHỦ ĐỀ 03 · BẢN SẮC & DI SẢN KIẾN TRÚC",
+      src: "./assets/mau-thiet-ke-thanh-pho-hoa-phuong-do.jpg",
+      alt: "Phối cảnh 3D mẫu thiết kế Tự hào Hải Phòng - Thành phố Hoa Phượng Đỏ",
+      chips: [
+        "🌺 Vòm nhận diện hoa phượng & cẩu cảng",
+        "🏛️ Mô hình mặt đứng Nhà hát Lớn hắt sáng",
+        "📺 Màn hình trình chiếu cảnh sắc thành phố",
+        "📸 Bục ghế ngồi check-in hoa phượng đỏ"
+      ],
+      desc: "Tôn vinh biểu tượng hoa phượng đỏ và công trình kiến trúc trăm năm Nhà hát Lớn Hải Phòng, tích hợp màn hình trình chiếu cảnh sắc thành phố năng động và sa bàn tàu biển kết hợp góc check-in."
     },
-    digital: {
-      title: "Tương tác & trải nghiệm số:",
-      text: "Tích hợp mã QR, video thuyết minh, bản đồ số hoặc nội dung tương tác đa phương tiện giúp tăng khả năng tiếp cận thông tin chính thống."
-    },
-    green: {
-      title: "Vật liệu xanh & kết cấu module:",
-      text: "Ưu tiên vật liệu thân thiện môi trường, tái sử dụng, kết cấu module gọn nhẹ dễ thi công, tháo lắp và linh hoạt nhân rộng tại nhiều trường học."
+    {
+      id: "sangtao",
+      indexLabel: "MẪU 04 · NĂNG ĐỘNG, SÁNG TẠO",
+      name: "Tự hào Hải Phòng — Hải Phòng Năng động, Sáng tạo",
+      topic: "CHỦ ĐỀ 04 · TUỔI TRẺ & TƯƠNG TÁC SỐ",
+      src: "./assets/mau-thiet-ke-hai-phong-sang-tao.jpg",
+      alt: "Phối cảnh 3D mẫu thiết kế Tự hào Hải Phòng - Hải Phòng Năng động, Sáng tạo",
+      chips: [
+        "🗼 Vòm nhận diện hải đăng & hải âu",
+        "🖥️ Màn hình TV tương tác & thuyết minh số",
+        "💡 Bảng Giáo dục đổi mới sáng tạo & Kết nối",
+        "📸 Sa bàn mica led cầu Hoàng Văn Thụ & check-in"
+      ],
+      desc: "Thiết kế hiện đại mang hơi thở công nghệ với màn hình TV tương tác số, sa bàn mica led phát sáng cầu Hoàng Văn Thụ, các bảng infographic giáo dục – khởi nghiệp và khung check-in mạng xã hội trẻ trung."
     }
-  };
+  ];
 
   /* ---------------- Scroll Progress & Header State ---------------- */
   const progressBar = document.getElementById("pageProgress");
@@ -177,30 +217,103 @@
   tickCountdown();
   setInterval(tickCountdown, 1000);
 
-  /* ---------------- 5-Pillar Space Tabs ---------------- */
-  const pillarTabs = Array.from(document.querySelectorAll(".pillar-tab"));
-  const pillarDetail = document.getElementById("pillarDetail");
+  /* ---------------- 3D Design Samples Showcase ---------------- */
+  let currentDesignIdx = 0;
+  const designTabs = Array.from(document.querySelectorAll(".design-tab"));
+  const showcaseMainImg = document.getElementById("showcaseMainImg");
+  const showcaseBadgeText = document.getElementById("showcaseBadgeText");
+  const designDetailTitle = document.getElementById("designDetailTitle");
+  const designDetailTopic = document.getElementById("designDetailTopic");
+  const designDetailChips = document.getElementById("designDetailChips");
+  const designDetailDesc = document.getElementById("designDetailDesc");
 
-  pillarTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const key = tab.getAttribute("data-pillar");
-      const info = key ? PILLAR_CONTENT[key] : null;
-      if (!info || !pillarDetail) return;
+  const designModal = document.getElementById("designModal");
+  const designModalTitle = document.getElementById("designModalTitle");
+  const designModalImg = document.getElementById("designModalImg");
+  const designModalTopic = document.getElementById("designModalTopic");
+  const designModalDesc = document.getElementById("designModalDesc");
+  const designModalCounter = document.getElementById("designModalCounter");
+  const prevDesignBtn = document.getElementById("prevDesignBtn");
+  const nextDesignBtn = document.getElementById("nextDesignBtn");
+  const openDesignModalBtn = document.getElementById("openDesignModalBtn");
+  const showcaseImgWrap = document.getElementById("showcaseImgWrap");
 
-      pillarTabs.forEach((t) => {
-        const active = t === tab;
-        t.classList.toggle("active", active);
-        t.setAttribute("aria-selected", String(active));
+  function renderDesignUI(idx, updateModal = false) {
+    if (idx < 0 || idx >= DESIGN_MODELS.length) return;
+    currentDesignIdx = idx;
+    const model = DESIGN_MODELS[idx];
+
+    // Update main stage
+    if (showcaseMainImg) {
+      showcaseMainImg.style.opacity = "0.4";
+      setTimeout(() => {
+        showcaseMainImg.src = model.src;
+        showcaseMainImg.alt = model.alt;
+        showcaseMainImg.style.opacity = "1";
+      }, 120);
+    }
+    if (showcaseBadgeText) showcaseBadgeText.textContent = model.indexLabel;
+    if (designDetailTitle) designDetailTitle.textContent = model.name;
+    if (designDetailTopic) designDetailTopic.textContent = model.topic;
+    if (designDetailDesc) designDetailDesc.textContent = model.desc;
+
+    if (designDetailChips) {
+      designDetailChips.replaceChildren();
+      model.chips.forEach((c) => {
+        const li = document.createElement("li");
+        li.textContent = c;
+        designDetailChips.appendChild(li);
       });
-      pillarDetail.replaceChildren();
-      const strong = document.createElement("strong");
-      strong.textContent = info.title + " ";
-      pillarDetail.appendChild(strong);
-      pillarDetail.appendChild(document.createTextNode(info.text));
+    }
+
+    // Update tab states
+    designTabs.forEach((tab, i) => {
+      const active = i === idx;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-selected", String(active));
+    });
+
+    // Update modal if open or requested
+    if (designModalTitle) designModalTitle.textContent = model.name;
+    if (designModalImg) {
+      designModalImg.src = model.src;
+      designModalImg.alt = model.alt;
+    }
+    if (designModalTopic) designModalTopic.textContent = model.topic;
+    if (designModalDesc) designModalDesc.textContent = model.desc;
+    if (designModalCounter) designModalCounter.textContent = `${idx + 1} / ${DESIGN_MODELS.length}`;
+  }
+
+  function selectDesignById(id) {
+    const foundIdx = DESIGN_MODELS.findIndex((m) => m.id === id);
+    if (foundIdx !== -1) {
+      renderDesignUI(foundIdx);
+    }
+  }
+
+  designTabs.forEach((tab, idx) => {
+    tab.addEventListener("click", () => renderDesignUI(idx));
+  });
+
+  // Brief cards in #noi-dung linking to design models
+  document.querySelectorAll("[data-select-design]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const designId = btn.getAttribute("data-select-design");
+      selectDesignById(designId);
+      const targetSec = document.getElementById("yeu-cau");
+      if (targetSec) {
+        targetSec.scrollIntoView({ behavior: "smooth", block: "start" });
+        const sc = document.getElementById("designShowcase");
+        if (sc) {
+          sc.classList.remove("highlight-flash");
+          void sc.offsetWidth; // trigger reflow
+          sc.classList.add("highlight-flash");
+        }
+      }
     });
   });
 
-  /* ---------------- Modals (Poster Lightbox & Receipt) ---------------- */
+  /* ---------------- Modals (Poster Lightbox, Design Modal & Receipt) ---------------- */
   const posterModal = document.getElementById("posterModal");
   const receiptModal = document.getElementById("receiptModal");
 
@@ -227,6 +340,35 @@
     openPosterImgBtn.addEventListener("click", () => openDialog(posterModal));
   }
 
+  if (openDesignModalBtn) {
+    openDesignModalBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      renderDesignUI(currentDesignIdx);
+      openDialog(designModal);
+    });
+  }
+
+  if (showcaseImgWrap) {
+    showcaseImgWrap.addEventListener("click", () => {
+      renderDesignUI(currentDesignIdx);
+      openDialog(designModal);
+    });
+  }
+
+  if (prevDesignBtn) {
+    prevDesignBtn.addEventListener("click", () => {
+      const prev = (currentDesignIdx - 1 + DESIGN_MODELS.length) % DESIGN_MODELS.length;
+      renderDesignUI(prev);
+    });
+  }
+
+  if (nextDesignBtn) {
+    nextDesignBtn.addEventListener("click", () => {
+      const next = (currentDesignIdx + 1) % DESIGN_MODELS.length;
+      renderDesignUI(next);
+    });
+  }
+
   document.querySelectorAll("[data-close-modal]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const id = btn.getAttribute("data-close-modal");
@@ -234,7 +376,7 @@
     });
   });
 
-  [posterModal, receiptModal].forEach((dlg) => {
+  [posterModal, designModal, receiptModal].forEach((dlg) => {
     if (!dlg) return;
     dlg.addEventListener("click", (e) => {
       const rect = dlg.getBoundingClientRect();
@@ -245,6 +387,19 @@
         e.clientX <= rect.left + rect.width;
       if (!inside) closeDialog(dlg);
     });
+  });
+
+  // Modal keyboard navigation
+  window.addEventListener("keydown", (e) => {
+    if (designModal && designModal.open) {
+      if (e.key === "ArrowLeft") {
+        const prev = (currentDesignIdx - 1 + DESIGN_MODELS.length) % DESIGN_MODELS.length;
+        renderDesignUI(prev);
+      } else if (e.key === "ArrowRight") {
+        const next = (currentDesignIdx + 1) % DESIGN_MODELS.length;
+        renderDesignUI(next);
+      }
+    }
   });
 
   /* ---------------- Registration & Submission Form ---------------- */
