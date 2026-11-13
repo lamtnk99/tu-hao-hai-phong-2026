@@ -224,14 +224,12 @@
   const showcaseBadgeText = document.getElementById("showcaseBadgeText");
   const designDetailTitle = document.getElementById("designDetailTitle");
   const designDetailTopic = document.getElementById("designDetailTopic");
-  const designDetailChips = document.getElementById("designDetailChips");
-  const designDetailDesc = document.getElementById("designDetailDesc");
 
   const designModal = document.getElementById("designModal");
   const designModalTitle = document.getElementById("designModalTitle");
+  const designModalSubtitle = document.getElementById("designModalSubtitle");
   const designModalImg = document.getElementById("designModalImg");
   const designModalTopic = document.getElementById("designModalTopic");
-  const designModalDesc = document.getElementById("designModalDesc");
   const designModalCounter = document.getElementById("designModalCounter");
   const prevDesignBtn = document.getElementById("prevDesignBtn");
   const nextDesignBtn = document.getElementById("nextDesignBtn");
@@ -255,16 +253,6 @@
     if (showcaseBadgeText) showcaseBadgeText.textContent = model.indexLabel;
     if (designDetailTitle) designDetailTitle.textContent = model.name;
     if (designDetailTopic) designDetailTopic.textContent = model.topic;
-    if (designDetailDesc) designDetailDesc.textContent = model.desc;
-
-    if (designDetailChips) {
-      designDetailChips.replaceChildren();
-      model.chips.forEach((c) => {
-        const li = document.createElement("li");
-        li.textContent = c;
-        designDetailChips.appendChild(li);
-      });
-    }
 
     // Update tab states
     designTabs.forEach((tab, i) => {
@@ -275,12 +263,12 @@
 
     // Update modal if open or requested
     if (designModalTitle) designModalTitle.textContent = model.name;
+    if (designModalSubtitle) designModalSubtitle.textContent = model.name;
     if (designModalImg) {
       designModalImg.src = model.src;
       designModalImg.alt = model.alt;
     }
     if (designModalTopic) designModalTopic.textContent = model.topic;
-    if (designModalDesc) designModalDesc.textContent = model.desc;
     if (designModalCounter) designModalCounter.textContent = `${idx + 1} / ${DESIGN_MODELS.length}`;
   }
 
