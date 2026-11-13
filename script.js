@@ -544,6 +544,15 @@
       if (unit.length < 2) {
         setError("regUnit", "errUnit", "Vui lòng nhập đơn vị hoặc trường học của bạn.");
         valid = false;
+      } else if (
+        /^(đoàn(\s+thanh\s+niên)?\s*(xã\s*[/,]\s*phường|xã\s+phường|đặc\s+khu)?(\s+tp\.?\s*hải\s*phòng)?)$/i.test(unit) ||
+        unit.toLowerCase().includes("xã / phường / đặc khu") ||
+        unit.toLowerCase() === "đoàn xã/phường" ||
+        unit.toLowerCase() === "đoàn xã" ||
+        unit.toLowerCase() === "đoàn phường"
+      ) {
+        setError("regUnit", "errUnit", "Vui lòng ghi rõ tên xã, phường hoặc trường cụ thể (Ví dụ: Đoàn phường Hạ Lý, Đoàn xã An Đồng...).");
+        valid = false;
       } else {
         setError("regUnit", "errUnit", "");
       }
